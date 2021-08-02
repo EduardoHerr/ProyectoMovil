@@ -40,7 +40,7 @@
                 android:inputType="textMultiLine"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/editText1"
+                android:id="@+id/txtUser"
                 android:hint="Ingrese su Usuario" />
         </LinearLayout>
         <LinearLayout
@@ -61,7 +61,7 @@
                 android:inputType="textMultiLine"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/editText2"
+                android:id="@+id/txtClave"
                 android:hint="Ingrese su Clave" />
         </LinearLayout>
         <Button
