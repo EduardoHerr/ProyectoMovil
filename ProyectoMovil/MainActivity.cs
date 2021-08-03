@@ -1,4 +1,5 @@
 ﻿using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Widget;
@@ -6,7 +7,7 @@ using AndroidX.AppCompat.App;
 
 namespace ProyectoMovil
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = false)]
     public class MainActivity : AppCompatActivity
     {
         connectDB db = new connectDB();
@@ -39,6 +40,8 @@ namespace ProyectoMovil
                     {
                         Toast.MakeText(this, "Bienvenido Administrador", ToastLength.Short).Show();
                         limpiarCampos();
+                        Intent intent = new Intent(this,typeof(adminInicio));
+                        StartActivity(intent);
                     }
                     else
                     {

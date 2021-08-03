@@ -60,6 +60,35 @@ namespace ProyectoMovil
 			return rol;
 		}
 
+		#region Usuario
+
+		public void RegistrarUsuario(string nombre,string apellido,string cedula,string correo,string clave,char rol)
+		{
+			try
+			{
+				string query = "INSERT INTO TBLUSUARIO VALUES(@nombre,@apellido,@cedula,@correo,@clave,@rol,'A')";
+				con.Open();
+				SqlCommand cmd = new SqlCommand(query, con);
+
+				cmd.Parameters.AddWithValue("@nombre", nombre);
+				cmd.Parameters.AddWithValue("@apellido", apellido);
+				cmd.Parameters.AddWithValue("@cedula", cedula);
+				cmd.Parameters.AddWithValue("@correo", correo);
+				cmd.Parameters.AddWithValue("@clave", clave);
+				cmd.Parameters.AddWithValue("@rol", rol);
+
+				cmd.ExecuteNonQuery();
+			}
+			catch (Exception)
+			{
+
+				throw;
+			}
+			
+
+		}
+
+		#endregion
 
 	}
 }

@@ -136,11 +136,10 @@
                 android:layout_width="52.0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView6" />
-            <EditText
-                android:inputType="textMultiLine"
-                android:layout_width="match_parent"
+            <Spinner
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:id="@+id/txtRol" />
+                android:id="@+id/spinner1" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
