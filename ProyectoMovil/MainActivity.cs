@@ -22,22 +22,30 @@ namespace ProyectoMovil
 
             btnIngresar.Click += delegate
             {
-				if (db.Ingresar(user.Text,pwd.Text)==0)
-				{
-                    Toast.MakeText(this, "Usuario Incorrecto", ToastLength.Short).Show();
-                    limpiarCampos();
-				}
-				else if (db.Ingresar(user.Text, pwd.Text) == 1)
-				{
-                    Toast.MakeText(this, "Bienvenido Administrador", ToastLength.Short).Show();
-                    limpiarCampos();
+                if (user.Text == "" && pwd.Text=="")
+                {
+                    Toast.MakeText(this, "Llene los campos", ToastLength.Short).Show();
                 }
                 else
-				{
-                    Toast.MakeText(this, "Bienvenido Usuario", ToastLength.Short).Show();
-                    limpiarCampos();
-                }
+                {
 
+
+                    if (db.Ingresar(user.Text, pwd.Text) == 0)
+                    {
+                        Toast.MakeText(this, "Usuario Incorrecto", ToastLength.Short).Show();
+                        limpiarCampos();
+                    }
+                    else if (db.Ingresar(user.Text, pwd.Text) == 1)
+                    {
+                        Toast.MakeText(this, "Bienvenido Administrador", ToastLength.Short).Show();
+                        limpiarCampos();
+                    }
+                    else
+                    {
+                        Toast.MakeText(this, "Bienvenido Usuario", ToastLength.Short).Show();
+                        limpiarCampos();
+                    }
+                }
             };
 
 
