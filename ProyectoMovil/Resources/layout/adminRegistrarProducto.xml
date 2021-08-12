@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/linearLayout1"
+    android:gravity="center">
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="369.5dp"
+        android:layout_height="477.5dp"
+        android:id="@+id/linearLayout2">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:id="@+id/linearLayout3">
+            <EditText
+                android:inputType="textMultiLine"
+                android:layout_width="213.0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/txtBuscar" />
+            <Button
+                android:text="BUSCAR"
+                android:layout_width="121.0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/button1"
+                android:layout_marginLeft="0.0dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:id="@+id/linearLayout4">
+            <TextView
+                android:text="Codigo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView1"
+                android:textAlignment="center" />
+            <EditText
+                android:inputType="textMultiLine"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/txtcodigo" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:id="@+id/linearLayout5">
+            <TextView
+                android:text="Nombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView2" />
+            <EditText
+                android:inputType="textMultiLine"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/txtnombre" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:id="@+id/linearLayout6">
+            <TextView
+                android:text="Desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView2" />
+            <EditText
+                android:inputType="textMultiLine"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/txtdescripcion" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:id="@+id/linearLayout7">
+            <TextView
+                android:text="Fecha El"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView2" />
+            <EditText
+                android:inputType="date"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/txtfechael" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:id="@+id/linearLayout8">
+            <TextView
+                android:text="Fecha Ex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView2" />
+            <EditText
+                android:inputType="date"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/txtfechaex" />
+          
+        </LinearLayout>
+       <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:id="@+id/linearLayout12">
+            <TextView
+                android:text="Descripcion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView2" />
+            <EditText
+                android:inputType="textMultiLine"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/txtcantidad" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout10"
+            android:layout_marginBottom="27.5dp"
+            android:layout_marginTop="0.0dp">
+            <Button
+                android:text="REGISTRAR"
+                android:layout_width="110.0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnRegistrar"
+                android:layout_marginLeft="10dp" />
+            <Button
+                android:text="MODIFICAR"
+                android:layout_width="110.0dp"
+                android:layout_height="49.5dp"
+                android:id="@+id/btnModificar"
+                android:layout_marginLeft="10dp" />
+            <Button
+                android:text="ELIMINAR"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnEliminar"
+                android:layout_marginLeft="10dp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
