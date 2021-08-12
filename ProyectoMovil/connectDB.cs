@@ -85,9 +85,55 @@ namespace ProyectoMovil
 
 				throw;
 			}
-			
+
+			con.Close();
+		}
+
+		public void actualizarCliente(string nombre, string apellido, string cedula, string correo, string clave, char rol,int id)
+		{
+			try
+			{
+				string query = "UPDATE TBLUSUARIO SET USUNOMBRE=@nombre,USUAPELLIDO=@apellido,USUCEDULA=@cedula,USUUSUARIO=@correo,USUCLAVE=@clave,USUROL=@rol WHERE IDUSUARIO=@id";
+				con.Open();
+				SqlCommand cmd = new SqlCommand(query, con);
+				cmd.Parameters.AddWithValue("@nombre", nombre);
+				cmd.Parameters.AddWithValue("@apellido", apellido);
+				cmd.Parameters.AddWithValue("@cedula", cedula);
+				cmd.Parameters.AddWithValue("@correo", correo);
+				cmd.Parameters.AddWithValue("@clave", clave);
+				cmd.Parameters.AddWithValue("@rol", rol);
+				cmd.Parameters.AddWithValue("@id", id);
+
+				cmd.ExecuteNonQuery();
+			}
+			catch (Exception)
+			{
+
+				throw;
+			}
+
+			con.Close();
 
 		}
+
+		public void eliminarUsuario(int id)
+		{
+			try
+			{
+				string query = "UPDATE TBLUSUARIO SET USUESTADO='I' WHERE IDUSUARIO=@id";
+				con.Open();
+				SqlCommand cmd = new SqlCommand(query,con);
+				cmd.Parameters.AddWithValue("@id", id);
+				cmd.ExecuteNonQuery();
+			}
+			catch (Exception)
+			{
+
+				throw;
+			}
+			con.Close();
+		}
+
 
 		public DataSet cargarDatosUsuario(string ci)
 		{

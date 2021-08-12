@@ -9,7 +9,7 @@ using ProyectoMovil.instanciasomee;
 
 namespace ProyectoMovil
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = false)]
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
         connectDB db = new connectDB();

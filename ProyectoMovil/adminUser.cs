@@ -11,9 +11,10 @@ using System.Text;
 using System.Data;
 namespace ProyectoMovil
 {
-	[Activity(Label = "adminUser", MainLauncher = true)]
+	[Activity(Label = "adminUser", MainLauncher = false)]
 	public class adminUser : Activity
 	{
+		static int id = 0;
 		connectDB db = new connectDB();
 		List<string> roles = new List<string>();
 		protected override void OnCreate(Bundle savedInstanceState)
@@ -29,14 +30,36 @@ namespace ProyectoMovil
 			var txtClave = FindViewById<EditText>(Resource.Id.txtPass);
 			var btnBusqueda = FindViewById<Button>(Resource.Id.button1);
 			var busqueda = FindViewById<EditText>(Resource.Id.txtBuscar);
-
+			var btnActualizar = FindViewById<Button>(Resource.Id.btnModificar);
 			var spnRol = FindViewById<Spinner>(Resource.Id.spinner1);
+			var btnEliminar = FindViewById<Button>(Resource.Id.btnEliminar);
 
+			roles.Add("--SELECCIONE--");
 			roles.Add("Administrador");
 			roles.Add("Usuario");
 			
 			var adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleSpinnerItem, roles);
 			spnRol.Adapter = adapter;
+
+			btnActualizar.Click += delegate
+			{
+				if (spnRol.SelectedItem.ToString() == "Administrador")
+				{
+
+					db.actualizarCliente(txtNombre.Text, txtApellido.Text, txtCedula.Text, txtCorreo.Text, txtClave.Text, 'A',id);
+					limpiar();
+
+				}
+				else if (spnRol.SelectedItem.ToString() == "Usuario")
+				{
+					db.actualizarCliente(txtNombre.Text, txtApellido.Text, txtCedula.Text, txtCorreo.Text, txtClave.Text, 'U', id);
+					limpiar();
+				}
+				else
+				{
+					Toast.MakeText(this, "Seleccione un rol", ToastLength.Short).Show();
+				}
+			};
 
 			btnRegistarUsuario.Click += delegate
 			{
@@ -47,9 +70,27 @@ namespace ProyectoMovil
 					limpiar();
 
 				}
-				else
+				else if (spnRol.SelectedItem.ToString() == "Usuario")
 				{
 					db.RegistrarUsuario(txtNombre.Text, txtApellido.Text, txtCedula.Text, txtCorreo.Text, txtClave.Text, 'U');
+					limpiar();
+				}
+				else
+				{
+					Toast.MakeText(this, "Seleccione un rol", ToastLength.Short).Show();
+				}
+			};
+
+			btnEliminar.Click += delegate
+			{
+				if (id==0)
+				{
+					Toast.MakeText(this, "Ningun dato seleccionado", ToastLength.Short).Show();
+				}
+				else
+				{
+					db.eliminarUsuario(id);
+					Toast.MakeText(this, "Usuario Eliminado", ToastLength.Short).Show();
 					limpiar();
 				}
 			};
@@ -64,13 +105,14 @@ namespace ProyectoMovil
 				txtCedula.Text = ds.Tables[0].Rows[0]["USUCEDULA"].ToString();
 				txtCorreo.Text = ds.Tables[0].Rows[0]["USUUSUARIO"].ToString();
 				txtClave.Text = ds.Tables[0].Rows[0]["USUCLAVE"].ToString();
+				id = Convert.ToInt32(ds.Tables[0].Rows[0]["IDUSUARIO"].ToString());
 				if (ds.Tables[0].Rows[0]["USUROL"].ToString()=="A")
 				{
-					spnRol.SetSelection(0);
+					spnRol.SetSelection(1);
 				}
 				else
 				{
-					spnRol.SetSelection(1);
+					spnRol.SetSelection(2);
 				}
 
 				busqueda.Text = "";
@@ -81,7 +123,10 @@ namespace ProyectoMovil
 			void limpiar()
 			{
 				txtNombre.Text = txtApellido.Text = txtCedula.Text = txtClave.Text = txtCorreo.Text = "";
+				spnRol.SetSelection(0);
 			}
+
+
 		}
 	}
 }
