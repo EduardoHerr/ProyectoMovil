@@ -10,14 +10,7 @@
     android:gravity="center"
     android:background="@mipmap/wallmovil">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:layout_width="359.5dp"
-        android:layout_height="515.5dp"
-        android:id="@+id/linearLayout11"
-        android:background="@drawable/xmlredondeo">
+    
         <LinearLayout
             android:orientation="vertical"
             android:minWidth="25px"
@@ -59,17 +52,19 @@
                 android:layout_height="60dp"
                 android:id="@+id/linearLayout4"
                 android:layout_marginLeft="8.0dp">
-                <TextView
-                    android:text="NOMBRE:"
-                    android:layout_width="71.5dp"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/textView1"
-                    android:textAlignment="center" />
-                <EditText
-                    android:inputType="textMultiLine"
-                    android:layout_width="262.0dp"
-                    android:layout_height="match_parent"
-                    android:id="@+id/txtNombre" />
+            <TextView
+                android:text="NOMBRE:"
+                android:layout_width="71.5dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView1"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_dark" />
+            <EditText
+                android:inputType="textMultiLine"
+                android:layout_width="262.0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/txtNombre"
+                android:textColor="@android:color/background_dark" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="horizontal"
@@ -79,16 +74,18 @@
                 android:layout_height="60dp"
                 android:id="@+id/linearLayout5"
                 android:layout_marginLeft="8dp">
-                <TextView
-                    android:text="APELLIDO:"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/textView2" />
-                <EditText
-                    android:inputType="textMultiLine"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/txtApellido" />
+            <TextView
+                android:text="APELLIDO:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView2"
+                android:textColor="@android:color/background_dark" />
+            <EditText
+                android:inputType="textMultiLine"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/txtApellido"
+                android:textColor="@android:color/black" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="horizontal"
@@ -98,16 +95,18 @@
                 android:layout_height="60dp"
                 android:id="@+id/linearLayout6"
                 android:layout_marginLeft="8dp">
-                <TextView
-                    android:text="CEDULA:"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/textView3" />
-                <EditText
-                    android:inputType="textMultiLine"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/txtCedula" />
+            <TextView
+                android:text="CEDULA:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView3"
+                android:textColor="@android:color/black" />
+            <EditText
+                android:inputType="textMultiLine"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/txtCedula"
+                android:textColor="@android:color/black" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="horizontal"
@@ -117,16 +116,18 @@
                 android:layout_height="60dp"
                 android:id="@+id/linearLayout7"
                 android:layout_marginLeft="8dp">
-                <TextView
-                    android:text="CORREO:"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/textView4" />
-                <EditText
-                    android:inputType="textMultiLine"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/txtCorreo" />
+            <TextView
+                android:text="CORREO:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView4"
+                android:textColor="@android:color/black" />
+            <EditText
+                android:inputType="textMultiLine"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/txtCorreo"
+                android:textColor="@android:color/black" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="horizontal"
@@ -136,17 +137,19 @@
                 android:layout_height="60dp"
                 android:id="@+id/linearLayout8"
                 android:layout_marginLeft="8dp">
-                <TextView
-                    android:text="CLAVE:"
-                    android:layout_width="57.0dp"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/textView5" />
-                <EditText
-                    android:inputType="textMultiLine"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/txtPass"
-                    android:layout_marginRight="0.0dp" />
+            <TextView
+                android:text="CLAVE:"
+                android:layout_width="57.0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView5"
+                android:textColor="@android:color/black" />
+            <EditText
+                android:inputType="textMultiLine"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/txtPass"
+                android:layout_marginRight="0.0dp"
+                android:textColor="@android:color/black" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="horizontal"
@@ -156,12 +159,13 @@
                 android:layout_height="60dp"
                 android:id="@+id/linearLayout9"
                 android:layout_marginLeft="8dp">
-                <TextView
-                    android:text="ROL:"
-                    android:layout_width="52.0dp"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/textView6"
-                    android:layout_gravity="center_vertical" />
+            <TextView
+                android:text="ROL:"
+                android:layout_width="52.0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView6"
+                android:layout_gravity="center_vertical"
+                android:textColor="@android:color/black" />
                 <Spinner
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -175,33 +179,32 @@
                 android:layout_height="58.0dp"
                 android:id="@+id/linearLayout10"
                 android:layout_marginTop="17.5dp">
-                <Button
-                    android:text="REGISTRAR"
-                    android:layout_width="104.0dp"
-                    android:layout_height="match_parent"
-                    android:id="@+id/btnRegistrar"
-                    android:layout_marginLeft="10dp"
-                    android:background="@drawable/redondeo"
-                    android:textColor="@android:color/background_light"
-                    android:textSize="13dp" />
-                <Button
-                    android:text="MODIFICAR"
-                    android:layout_width="104.5dp"
-                    android:layout_height="match_parent"
-                    android:id="@+id/btnModificar"
-                    android:layout_marginLeft="10dp"
-                    android:background="@drawable/redondeo"
-                    android:textColor="@android:color/background_light"
-                    android:textSize="13dp" />
-                <Button
-                    android:text="ELIMINAR"
-                    android:layout_width="104.5dp"
-                    android:layout_height="match_parent"
-                    android:id="@+id/btnEliminar"
-                    android:layout_marginLeft="10dp"
-                    android:background="@drawable/redondeo"
-                    android:textColor="@android:color/background_light" />
+            <Button
+                android:text="REGISTRAR"
+                android:layout_width="104.0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/btnRegistrar"
+                android:layout_marginLeft="10dp"
+                android:background="#ff005aff"
+                android:textColor="@android:color/background_light"
+                android:textSize="13dp" />
+            <Button
+                android:text="MODIFICAR"
+                android:layout_width="104.5dp"
+                android:layout_height="match_parent"
+                android:id="@+id/btnModificar"
+                android:layout_marginLeft="10dp"
+                android:background="#ff068a1b"
+                android:textColor="@android:color/background_light"
+                android:textSize="13dp" />
+            <Button
+                android:text="ELIMINAR"
+                android:layout_width="104.5dp"
+                android:layout_height="match_parent"
+                android:id="@+id/btnEliminar"
+                android:layout_marginLeft="10dp"
+                android:background="#ffc30505"
+                android:textColor="@android:color/background_light" />
             </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
 </LinearLayout>
