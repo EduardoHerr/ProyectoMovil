@@ -11,7 +11,7 @@ using System.Text;
 using System.Data;
 namespace ProyectoMovil
 {
-	[Activity(Label = "adminUser", MainLauncher = true)]
+	[Activity(Label = "adminUser", MainLauncher = false)]
 	public class adminUser : Activity
 	{
 		static int id = 0;

@@ -46,7 +46,7 @@
                     android:layout_marginLeft="10.0dp" />
                 <ImageButton
                     android:layout_width="65.0dp"
-                    android:layout_height="49.5dp"
+                    android:layout_height="53.5dp"
                     android:id="@+id/imageButton1"
                     android:background="@mipmap/lupa"
                     android:layout_marginTop="8.0dp" />
@@ -100,7 +100,7 @@
                 android:layout_marginLeft="8dp">
                 <TextView
                     android:text="CEDULA:"
-                    android:layout_width="65.0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView3" />
                 <EditText

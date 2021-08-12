@@ -7,7 +7,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/linearLayout1"
-    android:gravity="center" >
+    android:gravity="center"
+    android:background="@mipmap/wallmovil">
     <LinearLayout
         android:orientation="vertical"
         android:minWidth="25px"
@@ -21,21 +22,25 @@
             android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:id="@+id/linearLayout3" >
+            android:id="@+id/linearLayout3">
             <Button
                 android:text="USUARIOS"
                 android:layout_width="150dp"
                 android:layout_height="match_parent"
                 android:id="@+id/btnInicioUsuario"
                 android:layout_marginLeft="25dp"
-                android:layout_marginRight="15dp" />
+                android:layout_marginRight="15dp"
+                android:background="@android:color/holo_blue_dark"
+                android:textColor="@android:color/background_light" />
             <Button
                 android:text="CLIENTES"
                 android:layout_width="150.0dp"
                 android:layout_height="match_parent"
                 android:id="@+id/button2"
                 android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp" />
+                android:layout_marginRight="15dp"
+                android:background="@android:color/holo_blue_dark"
+                android:textColor="@android:color/background_light" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
