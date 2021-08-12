@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace ProyectoMovil
 {
@@ -86,6 +87,24 @@ namespace ProyectoMovil
 			}
 			
 
+		}
+
+		public DataSet cargarDatosUsuario(string ci)
+		{
+			
+			con.Open();
+			string query = "SELECT * FROM TBLUSUARIO WHERE USUCEDULA='"+ci+"'";
+			
+
+			
+			SqlDataAdapter sda = new SqlDataAdapter(query,con);
+			DataSet ds = new DataSet();
+
+			sda.Fill(ds);
+
+			con.Close();
+
+			return ds;
 		}
 
 		#endregion

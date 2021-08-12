@@ -4,6 +4,8 @@ using Android.OS;
 using Android.Runtime;
 using Android.Widget;
 using AndroidX.AppCompat.App;
+using ProyectoMovil;
+using ProyectoMovil.instanciasomee;
 
 namespace ProyectoMovil
 {
@@ -11,6 +13,7 @@ namespace ProyectoMovil
     public class MainActivity : AppCompatActivity
     {
         connectDB db = new connectDB();
+        WebService1 web = new WebService1();
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -31,12 +34,12 @@ namespace ProyectoMovil
                 {
 
 
-                    if (db.Ingresar(user.Text, pwd.Text) == 0)
+                    if (web.Ingresar(user.Text, pwd.Text) == 0)
                     {
                         Toast.MakeText(this, "Usuario Incorrecto", ToastLength.Short).Show();
                         limpiarCampos();
                     }
-                    else if (db.Ingresar(user.Text, pwd.Text) == 1)
+                    else if (web.Ingresar(user.Text, pwd.Text) == 1)
                     {
                         Toast.MakeText(this, "Bienvenido Administrador", ToastLength.Short).Show();
                         limpiarCampos();
