@@ -48,12 +48,14 @@ namespace ProyectoMovil
 
 					db.actualizarCliente(txtNombre.Text, txtApellido.Text, txtCedula.Text, txtCorreo.Text, txtClave.Text, 'A',id);
 					limpiar();
+					Toast.MakeText(this, "Registro Actualizado", ToastLength.Short).Show();
 
 				}
 				else if (spnRol.SelectedItem.ToString() == "Usuario")
 				{
 					db.actualizarCliente(txtNombre.Text, txtApellido.Text, txtCedula.Text, txtCorreo.Text, txtClave.Text, 'U', id);
 					limpiar();
+					Toast.MakeText(this, "Registro Actualizado", ToastLength.Short).Show();
 				}
 				else
 				{
@@ -68,12 +70,14 @@ namespace ProyectoMovil
 
 					db.RegistrarUsuario(txtNombre.Text, txtApellido.Text, txtCedula.Text, txtCorreo.Text, txtClave.Text, 'A');
 					limpiar();
+					Toast.MakeText(this, "Registro Guardado", ToastLength.Short).Show();
 
 				}
 				else if (spnRol.SelectedItem.ToString() == "Usuario")
 				{
 					db.RegistrarUsuario(txtNombre.Text, txtApellido.Text, txtCedula.Text, txtCorreo.Text, txtClave.Text, 'U');
 					limpiar();
+					Toast.MakeText(this, "Registro Guardado", ToastLength.Short).Show();
 				}
 				else
 				{
