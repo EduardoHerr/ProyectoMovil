@@ -50,7 +50,7 @@
             android:layout_height="70dp"
             android:id="@+id/linearLayout4" >
             <Button
-                android:text="Button"
+                android:text="CATEGORIA"
                 android:layout_width="150dp"
                 android:layout_height="match_parent"
                 android:id="@+id/button3"
@@ -59,7 +59,7 @@
                 android:background="@android:color/holo_blue_dark"
                 android:textColor="@android:color/background_light"/>
             <Button
-                android:text="Button"
+                android:text="PRODUCTOS"
                 android:layout_width="150dp"
                 android:layout_height="match_parent"
                 android:id="@+id/button4"
