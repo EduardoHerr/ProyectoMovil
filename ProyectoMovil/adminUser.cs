@@ -11,7 +11,7 @@ using System.Text;
 using System.Data;
 namespace ProyectoMovil
 {
-	[Activity(Label = "adminUser", MainLauncher = false)]
+	[Activity(Label = "adminUser", MainLauncher = true)]
 	public class adminUser : Activity
 	{
 		static int id = 0;
@@ -28,7 +28,7 @@ namespace ProyectoMovil
 			var txtCedula = FindViewById<EditText>(Resource.Id.txtCedula);
 			var txtCorreo = FindViewById<EditText>(Resource.Id.txtCorreo);
 			var txtClave = FindViewById<EditText>(Resource.Id.txtPass);
-			var btnBusqueda = FindViewById<Button>(Resource.Id.button1);
+			var btnBusqueda = FindViewById<ImageButton>(Resource.Id.imageButton1);
 			var busqueda = FindViewById<EditText>(Resource.Id.txtBuscar);
 			var btnActualizar = FindViewById<Button>(Resource.Id.btnModificar);
 			var spnRol = FindViewById<Spinner>(Resource.Id.spinner1);
