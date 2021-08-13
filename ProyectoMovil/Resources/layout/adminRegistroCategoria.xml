@@ -7,32 +7,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/linearLayout1"
-    android:gravity="center">
+    android:gravity="center"
+    android:background="@mipmap/wallmovil">
     <LinearLayout
         android:orientation="vertical"
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="369.5dp"
         android:layout_height="477.5dp"
-        android:id="@+id/linearLayout2">
+        android:id="@+id/linearLayout2"
+        android:background="@drawable/xmlredondeo">
         <LinearLayout
             android:orientation="horizontal"
             android:minWidth="25px"
             android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:id="@+id/linearLayout3">
+            android:id="@+id/linearLayout3"
+            android:layout_marginTop="15.5dp">
             <EditText
                 android:inputType="textMultiLine"
                 android:layout_width="213.0dp"
                 android:layout_height="match_parent"
-                android:id="@+id/txtBuscar" />
-            <Button
-                android:text="BUSCAR"
-                android:layout_width="121.0dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/button1"
-                android:layout_marginLeft="0.0dp" />
+                android:id="@+id/txtBuscar"
+                android:background="@drawable/busquedatext"
+                android:layout_marginTop="2.0dp"
+                android:layout_marginLeft="10.5dp" />
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/imageButton1"
+                android:background="@mipmap/lupa"
+                android:layout_marginLeft="8.5dp" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
@@ -40,7 +46,9 @@
             android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:id="@+id/linearLayout4">
+            android:id="@+id/linearLayout4"
+            android:layout_marginLeft="10.0dp"
+            android:layout_marginRight="7.0dp">
             <TextView
                 android:text="TIPO"
                 android:layout_width="wrap_content"
@@ -59,7 +67,9 @@
             android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:id="@+id/linearLayout5">
+            android:id="@+id/linearLayout5"
+            android:layout_marginLeft="12.0dp"
+            android:layout_marginRight="13.5dp">
             <TextView
                 android:text="Descripcion"
                 android:layout_width="wrap_content"

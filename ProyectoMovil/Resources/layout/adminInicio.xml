@@ -22,7 +22,8 @@
             android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:id="@+id/linearLayout3">
+            android:id="@+id/linearLayout3"
+            android:layout_marginBottom="20.5dp">
             <Button
                 android:text="USUARIOS"
                 android:layout_width="150dp"
@@ -74,7 +75,27 @@
             android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:id="@+id/linearLayout5" />
+            android:id="@+id/linearLayout5"
+            android:layout_marginTop="22.0dp">
+            <Button
+                android:text="Button"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:id="@+id/button3"
+                android:layout_marginLeft="26.5dp"
+                android:layout_marginRight="15dp"
+                android:background="@android:color/holo_blue_dark"
+                android:textColor="@android:color/background_light"/>
+            <Button
+                android:text="Button"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:id="@+id/button4"
+                android:layout_marginLeft="11.0dp"
+                android:layout_marginRight="15dp"
+                android:background="@android:color/holo_blue_dark"
+                android:textColor="@android:color/background_light"/>
+        </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
             android:minWidth="25px"

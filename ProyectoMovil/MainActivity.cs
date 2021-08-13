@@ -5,7 +5,7 @@ using Android.Runtime;
 using Android.Widget;
 using AndroidX.AppCompat.App;
 using ProyectoMovil;
-using ProyectoMovil.instanciasomee;
+using ProyectoMovil.com.somee.proyectomovil22;
 
 namespace ProyectoMovil
 {

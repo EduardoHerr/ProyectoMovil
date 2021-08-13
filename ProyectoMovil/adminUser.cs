@@ -9,6 +9,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data;
+using ProyectoMovil.com.somee.proyectomovil22;
+
 namespace ProyectoMovil
 {
 	[Activity(Label = "adminUser", MainLauncher = false)]
@@ -16,6 +18,7 @@ namespace ProyectoMovil
 	{
 		static int id = 0;
 		connectDB db = new connectDB();
+		WebService1 web = new WebService1();
 		List<string> roles = new List<string>();
 		protected override void OnCreate(Bundle savedInstanceState)
 		{
@@ -45,15 +48,15 @@ namespace ProyectoMovil
 			{
 				if (spnRol.SelectedItem.ToString() == "Administrador")
 				{
-
-					db.actualizarCliente(txtNombre.Text, txtApellido.Text, txtCedula.Text, txtCorreo.Text, txtClave.Text, 'A',id);
+					
+					web.actualizarCliente(txtNombre.Text, txtApellido.Text, txtCedula.Text, txtCorreo.Text, txtClave.Text, 'A',id);
 					limpiar();
 					Toast.MakeText(this, "Registro Actualizado", ToastLength.Short).Show();
 
 				}
 				else if (spnRol.SelectedItem.ToString() == "Usuario")
 				{
-					db.actualizarCliente(txtNombre.Text, txtApellido.Text, txtCedula.Text, txtCorreo.Text, txtClave.Text, 'U', id);
+					web.actualizarCliente(txtNombre.Text, txtApellido.Text, txtCedula.Text, txtCorreo.Text, txtClave.Text, 'U', id);
 					limpiar();
 					Toast.MakeText(this, "Registro Actualizado", ToastLength.Short).Show();
 				}
@@ -68,14 +71,14 @@ namespace ProyectoMovil
 				if (spnRol.SelectedItem.ToString() == "Administrador")
 				{
 
-					db.RegistrarUsuario(txtNombre.Text, txtApellido.Text, txtCedula.Text, txtCorreo.Text, txtClave.Text, 'A');
+					web.RegistrarUsuario(txtNombre.Text, txtApellido.Text, txtCedula.Text, txtCorreo.Text, txtClave.Text, 'A');
 					limpiar();
 					Toast.MakeText(this, "Registro Guardado", ToastLength.Short).Show();
 
 				}
 				else if (spnRol.SelectedItem.ToString() == "Usuario")
 				{
-					db.RegistrarUsuario(txtNombre.Text, txtApellido.Text, txtCedula.Text, txtCorreo.Text, txtClave.Text, 'U');
+					web.RegistrarUsuario(txtNombre.Text, txtApellido.Text, txtCedula.Text, txtCorreo.Text, txtClave.Text, 'U');
 					limpiar();
 					Toast.MakeText(this, "Registro Guardado", ToastLength.Short).Show();
 				}
@@ -93,7 +96,7 @@ namespace ProyectoMovil
 				}
 				else
 				{
-					db.eliminarUsuario(id);
+					web.eliminarUsuario(id);
 					Toast.MakeText(this, "Usuario Eliminado", ToastLength.Short).Show();
 					limpiar();
 				}
@@ -101,7 +104,7 @@ namespace ProyectoMovil
 
 			btnBusqueda.Click += delegate
 			{
-				DataSet ds = db.cargarDatosUsuario(busqueda.Text);
+				DataSet ds = web.cargarDatosUsuario(busqueda.Text);
 
 				
 				txtNombre.Text = ds.Tables[0].Rows[0]["USUNOMBRE"].ToString();
@@ -110,6 +113,7 @@ namespace ProyectoMovil
 				txtCorreo.Text = ds.Tables[0].Rows[0]["USUUSUARIO"].ToString();
 				txtClave.Text = ds.Tables[0].Rows[0]["USUCLAVE"].ToString();
 				id = Convert.ToInt32(ds.Tables[0].Rows[0]["IDUSUARIO"].ToString());
+				
 				if (ds.Tables[0].Rows[0]["USUROL"].ToString()=="A")
 				{
 					spnRol.SetSelection(1);
