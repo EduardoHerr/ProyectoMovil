@@ -18,6 +18,14 @@ namespace ProyectoMovil
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.adminRegistroCategoria);
+            var btnRegistarCat = FindViewById<Button>(Resource.Id.btnRegistrarcat);
+            var btnModificarCat = FindViewById<Button>(Resource.Id.btnModificarcat);
+            var btnEliminarCat = FindViewById<Button>(Resource.Id.btnEliminarcat);
+            var btnBuscarCat = FindViewById<Button>(Resource.Id.btnBuscarcat);
+            var txtbusqueda = FindViewById<EditText>(Resource.Id.txtBuscarcat);
+            var txttipocat = FindViewById<EditText>(Resource.Id.txttipocat);
+            var txtdesccat = FindViewById<EditText>(Resource.Id.txtdesccat);
+
             // Create your application here
         }
     }

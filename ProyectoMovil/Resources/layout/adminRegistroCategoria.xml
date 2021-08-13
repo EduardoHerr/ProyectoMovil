@@ -94,19 +94,19 @@
                 android:text="REGISTRAR"
                 android:layout_width="110.0dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/btnRegistrar"
+                android:id="@+id/btnRegistrarcat"
                 android:layout_marginLeft="10dp" />
             <Button
                 android:text="MODIFICAR"
                 android:layout_width="110.0dp"
                 android:layout_height="49.5dp"
-                android:id="@+id/btnModificar"
+                android:id="@+id/btnModificarcat"
                 android:layout_marginLeft="10dp" />
             <Button
                 android:text="ELIMINAR"
                 android:layout_width="110dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/btnEliminar"
+                android:id="@+id/btnEliminarcat"
                 android:layout_marginLeft="10dp" />
         </LinearLayout>
     </LinearLayout>
