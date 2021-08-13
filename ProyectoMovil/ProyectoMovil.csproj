@@ -73,6 +73,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="adminInicio.cs" />
+    <Compile Include="adminCategoria.cs" />
+    <Compile Include="adminProducto.cs" />
     <Compile Include="adminUser.cs" />
     <Compile Include="connectDB.cs" />
     <Compile Include="MainActivity.cs" />
@@ -177,14 +179,10 @@
     <AndroidResource Include="Resources\layout\adminCliente.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResourceAnalysisConfig Include="Resources\layout\adminRegistrarCategoria.xml">
-      <SubType>Designer</SubType>
-    </AndroidResourceAnalysisConfig>
+    <AndroidResource Include="Resources\layout\adminRegistroCategoria.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResourceAnalysisConfig Include="Resources\layout\adminRegistrarProducto.xml">
-      <SubType>Designer</SubType>
-    </AndroidResourceAnalysisConfig>
+    <AndroidResource Include="Resources\layout\adminRegistroProducto.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

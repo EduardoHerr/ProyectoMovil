@@ -20,10 +20,22 @@ namespace ProyectoMovil
 			SetContentView(Resource.Layout.adminInicio);
 			// Create your application here
 			var btnUsuario = FindViewById<Button>(Resource.Id.btnInicioUsuario);
+			var btnCategoria = FindViewById<Button>(Resource.Id.btnCategoria);
+			var btnProducto = FindViewById<Button>(Resource.Id.btnProductos);
 
 			btnUsuario.Click += delegate
 			{
 				Intent intent = new Intent(this, typeof(adminUser));
+				StartActivity(intent);
+			};
+			btnCategoria.Click += delegate
+			{
+				Intent intent = new Intent(this, typeof(adminCategoria));
+				StartActivity(intent);
+			};
+			btnProducto.Click += delegate
+			{
+				Intent intent = new Intent(this, typeof(adminProducto));
 				StartActivity(intent);
 			};
 		}
