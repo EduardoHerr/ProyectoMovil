@@ -85,7 +85,7 @@ namespace ProyectoMovil
                     txtfechaeliapro.Text = ds.Tables[0].Rows[0]["PRODFRECHAELAB"].ToString();
                     txtfechaexpro.Text = ds.Tables[0].Rows[0]["PRODFECHAEXP"].ToString();
                     txtcantidadpro.Text = ds.Tables[0].Rows[0]["PRODCANTIDAD"].ToString();
-                    id = Convert.ToInt32(ds.Tables[0].Rows[0]["IDCATEGORIAPRODUCTO"].ToString());
+                    txtcodigopro.Text = ds.Tables[0].Rows[0]["PRODCODIGO"].ToString();
                 }
                 catch (Exception)
                 {
