@@ -288,7 +288,7 @@ namespace ProyectoMovil.com.somee.proyectomovil22 {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/modificarProducto", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void modificarProducto(string idcate, string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, int cantidad, string estado, int id) {
+        public void modificarProducto(string idcate, string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, string cantidad, int id) {
             this.Invoke("modificarProducto", new object[] {
                         idcate,
                         codigo,
@@ -297,17 +297,16 @@ namespace ProyectoMovil.com.somee.proyectomovil22 {
                         fechaelab,
                         fechaexp,
                         cantidad,
-                        estado,
                         id});
         }
         
         /// <remarks/>
-        public void modificarProductoAsync(string idcate, string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, int cantidad, string estado, int id) {
-            this.modificarProductoAsync(idcate, codigo, nombre, descripcion, fechaelab, fechaexp, cantidad, estado, id, null);
+        public void modificarProductoAsync(string idcate, string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, string cantidad, int id) {
+            this.modificarProductoAsync(idcate, codigo, nombre, descripcion, fechaelab, fechaexp, cantidad, id, null);
         }
         
         /// <remarks/>
-        public void modificarProductoAsync(string idcate, string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, int cantidad, string estado, int id, object userState) {
+        public void modificarProductoAsync(string idcate, string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, string cantidad, int id, object userState) {
             if ((this.modificarProductoOperationCompleted == null)) {
                 this.modificarProductoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnmodificarProductoOperationCompleted);
             }
@@ -319,7 +318,6 @@ namespace ProyectoMovil.com.somee.proyectomovil22 {
                         fechaelab,
                         fechaexp,
                         cantidad,
-                        estado,
                         id}, this.modificarProductoOperationCompleted, userState);
         }
         

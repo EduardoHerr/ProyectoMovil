@@ -43,9 +43,9 @@ namespace ProyectoMovil
 
             btnModificarpro.Click += delegate
             {
-                string estado = null;
+                
                 web.modificarProducto(txtcategoriapro.Text, txtcodigopro.Text, 
-                    txtnombrepro.Text, txtdescpro.Text,txtfechaeliapro.Text, txtfechaexpro.Text,txtcantidadpro.Text,estado ,id);
+                    txtnombrepro.Text, txtdescpro.Text,txtfechaeliapro.Text, txtfechaexpro.Text,txtcantidadpro.Text ,id);
                 limpiar();
                 Toast.MakeText(this, "Registro Actualizado", ToastLength.Short).Show();
             };
@@ -85,7 +85,7 @@ namespace ProyectoMovil
                     txtfechaeliapro.Text = ds.Tables[0].Rows[0]["PRODFRECHAELAB"].ToString();
                     txtfechaexpro.Text = ds.Tables[0].Rows[0]["PRODFECHAEXP"].ToString();
                     txtcantidadpro.Text = ds.Tables[0].Rows[0]["PRODCANTIDAD"].ToString();
-                    txtcodigopro.Text = ds.Tables[0].Rows[0]["PRODCODIGO"].ToString();
+                    id = Convert.ToInt32(ds.Tables[0].Rows[0]["IDPRODUCTO"].ToString());
                 }
                 catch (Exception)
                 {
