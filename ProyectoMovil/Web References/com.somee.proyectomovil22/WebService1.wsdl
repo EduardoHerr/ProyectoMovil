@@ -49,6 +49,7 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idcate" type="s:int" />
             <s:element minOccurs="0" maxOccurs="1" name="codigo" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="descripcion" type="s:string" />
@@ -61,6 +62,27 @@
       </s:element>
       <s:element name="modificarProductoResponse">
         <s:complexType />
+      </s:element>
+      <s:element name="cargarDatosProducto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargarDatosProductoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargarDatosProductoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
       </s:element>
       <s:element name="eliminarProducto">
         <s:complexType>
@@ -105,6 +127,27 @@
       <s:element name="eliminarCategoriaResponse">
         <s:complexType />
       </s:element>
+      <s:element name="cargarDatosCategoria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargarDatosCategoriaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargarDatosCategoriaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="registrarProveedor">
         <s:complexType>
           <s:sequence>
@@ -133,6 +176,27 @@
       </s:element>
       <s:element name="actualizarProveedorResponse">
         <s:complexType />
+      </s:element>
+      <s:element name="cargarDatosProveedor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ruc" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargarDatosProveedorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargarDatosProveedorResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
       </s:element>
       <s:element name="eliminarProveedor">
         <s:complexType>
@@ -226,6 +290,66 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="RegistrarCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apellido" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cedula" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="direccion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="telefono" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistrarClienteResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="modificarCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apellido" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cedula" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="direccion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="telefono" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="modificarClienteResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="eliminarCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarClienteResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="cargarDatosCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ci" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargarDatosClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cargarDatosClienteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
     <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
       <s:simpleType name="char">
@@ -257,6 +381,12 @@
   <wsdl:message name="modificarProductoSoapOut">
     <wsdl:part name="parameters" element="tns:modificarProductoResponse" />
   </wsdl:message>
+  <wsdl:message name="cargarDatosProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:cargarDatosProducto" />
+  </wsdl:message>
+  <wsdl:message name="cargarDatosProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:cargarDatosProductoResponse" />
+  </wsdl:message>
   <wsdl:message name="eliminarProductoSoapIn">
     <wsdl:part name="parameters" element="tns:eliminarProducto" />
   </wsdl:message>
@@ -281,6 +411,12 @@
   <wsdl:message name="eliminarCategoriaSoapOut">
     <wsdl:part name="parameters" element="tns:eliminarCategoriaResponse" />
   </wsdl:message>
+  <wsdl:message name="cargarDatosCategoriaSoapIn">
+    <wsdl:part name="parameters" element="tns:cargarDatosCategoria" />
+  </wsdl:message>
+  <wsdl:message name="cargarDatosCategoriaSoapOut">
+    <wsdl:part name="parameters" element="tns:cargarDatosCategoriaResponse" />
+  </wsdl:message>
   <wsdl:message name="registrarProveedorSoapIn">
     <wsdl:part name="parameters" element="tns:registrarProveedor" />
   </wsdl:message>
@@ -292,6 +428,12 @@
   </wsdl:message>
   <wsdl:message name="actualizarProveedorSoapOut">
     <wsdl:part name="parameters" element="tns:actualizarProveedorResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargarDatosProveedorSoapIn">
+    <wsdl:part name="parameters" element="tns:cargarDatosProveedor" />
+  </wsdl:message>
+  <wsdl:message name="cargarDatosProveedorSoapOut">
+    <wsdl:part name="parameters" element="tns:cargarDatosProveedorResponse" />
   </wsdl:message>
   <wsdl:message name="eliminarProveedorSoapIn">
     <wsdl:part name="parameters" element="tns:eliminarProveedor" />
@@ -335,6 +477,30 @@
   <wsdl:message name="cargarDatosUsuarioSoapOut">
     <wsdl:part name="parameters" element="tns:cargarDatosUsuarioResponse" />
   </wsdl:message>
+  <wsdl:message name="RegistrarClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:RegistrarCliente" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:RegistrarClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="modificarClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:modificarCliente" />
+  </wsdl:message>
+  <wsdl:message name="modificarClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:modificarClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminarCliente" />
+  </wsdl:message>
+  <wsdl:message name="eliminarClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminarClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargarDatosClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:cargarDatosCliente" />
+  </wsdl:message>
+  <wsdl:message name="cargarDatosClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:cargarDatosClienteResponse" />
+  </wsdl:message>
   <wsdl:portType name="WebService1Soap">
     <wsdl:operation name="HelloWorld">
       <wsdl:input message="tns:HelloWorldSoapIn" />
@@ -352,6 +518,10 @@
       <wsdl:input message="tns:modificarProductoSoapIn" />
       <wsdl:output message="tns:modificarProductoSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="cargarDatosProducto">
+      <wsdl:input message="tns:cargarDatosProductoSoapIn" />
+      <wsdl:output message="tns:cargarDatosProductoSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="eliminarProducto">
       <wsdl:input message="tns:eliminarProductoSoapIn" />
       <wsdl:output message="tns:eliminarProductoSoapOut" />
@@ -368,6 +538,10 @@
       <wsdl:input message="tns:eliminarCategoriaSoapIn" />
       <wsdl:output message="tns:eliminarCategoriaSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="cargarDatosCategoria">
+      <wsdl:input message="tns:cargarDatosCategoriaSoapIn" />
+      <wsdl:output message="tns:cargarDatosCategoriaSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="registrarProveedor">
       <wsdl:input message="tns:registrarProveedorSoapIn" />
       <wsdl:output message="tns:registrarProveedorSoapOut" />
@@ -375,6 +549,10 @@
     <wsdl:operation name="actualizarProveedor">
       <wsdl:input message="tns:actualizarProveedorSoapIn" />
       <wsdl:output message="tns:actualizarProveedorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargarDatosProveedor">
+      <wsdl:input message="tns:cargarDatosProveedorSoapIn" />
+      <wsdl:output message="tns:cargarDatosProveedorSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="eliminarProveedor">
       <wsdl:input message="tns:eliminarProveedorSoapIn" />
@@ -403,6 +581,22 @@
     <wsdl:operation name="cargarDatosUsuario">
       <wsdl:input message="tns:cargarDatosUsuarioSoapIn" />
       <wsdl:output message="tns:cargarDatosUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarCliente">
+      <wsdl:input message="tns:RegistrarClienteSoapIn" />
+      <wsdl:output message="tns:RegistrarClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="modificarCliente">
+      <wsdl:input message="tns:modificarClienteSoapIn" />
+      <wsdl:output message="tns:modificarClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarCliente">
+      <wsdl:input message="tns:eliminarClienteSoapIn" />
+      <wsdl:output message="tns:eliminarClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargarDatosCliente">
+      <wsdl:input message="tns:cargarDatosClienteSoapIn" />
+      <wsdl:output message="tns:cargarDatosClienteSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
@@ -436,6 +630,15 @@
     </wsdl:operation>
     <wsdl:operation name="modificarProducto">
       <soap:operation soapAction="http://tempuri.org/modificarProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargarDatosProducto">
+      <soap:operation soapAction="http://tempuri.org/cargarDatosProducto" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -479,6 +682,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="cargarDatosCategoria">
+      <soap:operation soapAction="http://tempuri.org/cargarDatosCategoria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="registrarProveedor">
       <soap:operation soapAction="http://tempuri.org/registrarProveedor" style="document" />
       <wsdl:input>
@@ -490,6 +702,15 @@
     </wsdl:operation>
     <wsdl:operation name="actualizarProveedor">
       <soap:operation soapAction="http://tempuri.org/actualizarProveedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargarDatosProveedor">
+      <soap:operation soapAction="http://tempuri.org/cargarDatosProveedor" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -560,6 +781,42 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="RegistrarCliente">
+      <soap:operation soapAction="http://tempuri.org/RegistrarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modificarCliente">
+      <soap:operation soapAction="http://tempuri.org/modificarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarCliente">
+      <soap:operation soapAction="http://tempuri.org/eliminarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargarDatosCliente">
+      <soap:operation soapAction="http://tempuri.org/cargarDatosCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WebService1Soap12" type="tns:WebService1Soap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -592,6 +849,15 @@
     </wsdl:operation>
     <wsdl:operation name="modificarProducto">
       <soap12:operation soapAction="http://tempuri.org/modificarProducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargarDatosProducto">
+      <soap12:operation soapAction="http://tempuri.org/cargarDatosProducto" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -635,6 +901,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="cargarDatosCategoria">
+      <soap12:operation soapAction="http://tempuri.org/cargarDatosCategoria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="registrarProveedor">
       <soap12:operation soapAction="http://tempuri.org/registrarProveedor" style="document" />
       <wsdl:input>
@@ -646,6 +921,15 @@
     </wsdl:operation>
     <wsdl:operation name="actualizarProveedor">
       <soap12:operation soapAction="http://tempuri.org/actualizarProveedor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargarDatosProveedor">
+      <soap12:operation soapAction="http://tempuri.org/cargarDatosProveedor" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -709,6 +993,42 @@
     </wsdl:operation>
     <wsdl:operation name="cargarDatosUsuario">
       <soap12:operation soapAction="http://tempuri.org/cargarDatosUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarCliente">
+      <soap12:operation soapAction="http://tempuri.org/RegistrarCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modificarCliente">
+      <soap12:operation soapAction="http://tempuri.org/modificarCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarCliente">
+      <soap12:operation soapAction="http://tempuri.org/eliminarCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargarDatosCliente">
+      <soap12:operation soapAction="http://tempuri.org/cargarDatosCliente" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

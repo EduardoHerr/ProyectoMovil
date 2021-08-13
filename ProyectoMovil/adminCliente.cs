@@ -4,6 +4,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using ProyectoMovil.com.somee.proyectomovil22;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -17,6 +18,7 @@ namespace ProyectoMovil
     {
         static int id = 0;
         connectDB db = new connectDB();
+        WebService1 web = new WebService1();
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -37,7 +39,8 @@ namespace ProyectoMovil
 
             btnModificacionc.Click += delegate
             {
-                db.modificarCliente(nombrec.Text, apellidoc.Text, cedulac.Text, direc.Text, telfc.Text, id);
+                
+                web.modificarCliente(nombrec.Text, apellidoc.Text, cedulac.Text, direc.Text, telfc.Text, id);
                 limpiar();
                 Toast.MakeText(this, "Registro Actualizado", ToastLength.Short).Show();
             };
@@ -49,7 +52,7 @@ namespace ProyectoMovil
                 }
                 else
                 {
-                    db.eliminarCliente(id);
+                    web.eliminarCliente(id);
                     limpiar();
                     Toast.MakeText(this, "Registro Eliminado", ToastLength.Short).Show();
                 }
@@ -58,20 +61,29 @@ namespace ProyectoMovil
 
             btnRegistroc.Click += delegate
             {
-                db.RegistrarCliente(nombrec.Text, apellidoc.Text, cedulac.Text, direc.Text, telfc.Text);
+                web.RegistrarCliente(nombrec.Text, apellidoc.Text, cedulac.Text, direc.Text, telfc.Text);
                 limpiar();
                 Toast.MakeText(this, "Registro Creado", ToastLength.Short).Show();
             };
 
             btnBuscarc.Click += delegate
             {
-                DataSet ds = db.cargarDatosCliente(busqueda.Text);
-                nombrec.Text = ds.Tables[0].Rows[0]["CLINOMBRE"].ToString();
-                apellidoc.Text = ds.Tables[0].Rows[0]["CLIAPELLIDO"].ToString();
-                cedulac.Text = ds.Tables[0].Rows[0]["CLICEDULA"].ToString();
-                direc.Text = ds.Tables[0].Rows[0]["CLIDIRECCION"].ToString();
-                telfc.Text = ds.Tables[0].Rows[0]["CLITELEFONO"].ToString();
-                id =Convert.ToInt32(ds.Tables[0].Rows[0]["IDCLIENTE"].ToString());
+                try
+                {
+                    DataSet ds = web.cargarDatosCliente(busqueda.Text);
+                    nombrec.Text = ds.Tables[0].Rows[0]["CLINOMBRE"].ToString();
+                    apellidoc.Text = ds.Tables[0].Rows[0]["CLIAPELLIDO"].ToString();
+                    cedulac.Text = ds.Tables[0].Rows[0]["CLICEDULA"].ToString();
+                    direc.Text = ds.Tables[0].Rows[0]["CLIDIRECCION"].ToString();
+                    telfc.Text = ds.Tables[0].Rows[0]["CLITELEFONO"].ToString();
+                    id = Convert.ToInt32(ds.Tables[0].Rows[0]["IDCLIENTE"].ToString());
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                
             };
             
             void limpiar()
