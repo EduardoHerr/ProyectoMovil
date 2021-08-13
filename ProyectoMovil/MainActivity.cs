@@ -29,17 +29,19 @@ namespace ProyectoMovil
                 if (user.Text == "" || pwd.Text=="")
                 {
                     
-                    if (user.Text=="")
+                    if (pwd.Text == "" && user.Text == "")
+                    {
+                        Toast.MakeText(this, "Llene los campos", ToastLength.Short).Show();
+                        
+                    }
+                    else if (user.Text == "")
                     {
                         Toast.MakeText(this, "Falta el Usuario", ToastLength.Short).Show();
                     }
-                    else if (pwd.Text=="")
-                    {
-                        Toast.MakeText(this, "Falta la Clave", ToastLength.Short).Show();
-                    }
                     else
                     {
-                        Toast.MakeText(this, "Llene los campos", ToastLength.Short).Show();
+                        
+                        Toast.MakeText(this, "Falta la Clave", ToastLength.Short).Show();
                     }
                 }
                 else
