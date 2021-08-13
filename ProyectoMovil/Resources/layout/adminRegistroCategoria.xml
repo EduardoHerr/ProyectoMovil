@@ -29,14 +29,14 @@
                 android:inputType="textMultiLine"
                 android:layout_width="213.0dp"
                 android:layout_height="match_parent"
-                android:id="@+id/txtBuscar"
+                android:id="@+id/txtBuscarcat"
                 android:background="@drawable/busquedatext"
                 android:layout_marginTop="2.0dp"
                 android:layout_marginLeft="10.5dp" />
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:id="@+id/imageButton1"
+                android:id="@+id/btnbuscarcat"
                 android:background="@mipmap/lupa"
                 android:layout_marginLeft="8.5dp" />
         </LinearLayout>
@@ -59,7 +59,7 @@
                 android:inputType="textMultiLine"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/txttipo" />
+                android:id="@+id/txttipocat" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
@@ -79,7 +79,7 @@
                 android:inputType="textMultiLine"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/txttipo" />
+                android:id="@+id/txtdesccat" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"

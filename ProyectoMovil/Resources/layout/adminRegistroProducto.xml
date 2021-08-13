@@ -7,16 +7,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/linearLayout1"
-    android:gravity="center">
+    android:gravity="center"
+    android:background="@mipmap/wallmovil">
     <LinearLayout
         android:orientation="vertical"
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="369.5dp"
         android:layout_height="match_parent"
-        android:id="@+id/linearLayout2">
-        
-            <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:background="@drawable/xmlredondeo">
+
+        <LinearLayout
             android:orientation="horizontal"
             android:minWidth="25px"
             android:minHeight="25px"
@@ -54,8 +56,8 @@
                 android:layout_height="match_parent"
                 android:id="@+id/txtcategoriacatpro" />
         </LinearLayout>
-        
-            <LinearLayout
+
+        <LinearLayout
             android:orientation="horizontal"
             android:minWidth="25px"
             android:minHeight="25px"
