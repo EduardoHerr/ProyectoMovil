@@ -248,7 +248,7 @@ namespace ProyectoMovil.com.somee.proyectomovil22 {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/registrarProducto", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void registrarProducto(int idcategoria, string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, int cantidad, string estado) {
+        public void registrarProducto(string idcategoria, string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, string cantidad) {
             this.Invoke("registrarProducto", new object[] {
                         idcategoria,
                         codigo,
@@ -256,17 +256,16 @@ namespace ProyectoMovil.com.somee.proyectomovil22 {
                         descripcion,
                         fechaelab,
                         fechaexp,
-                        cantidad,
-                        estado});
+                        cantidad});
         }
         
         /// <remarks/>
-        public void registrarProductoAsync(int idcategoria, string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, int cantidad, string estado) {
-            this.registrarProductoAsync(idcategoria, codigo, nombre, descripcion, fechaelab, fechaexp, cantidad, estado, null);
+        public void registrarProductoAsync(string idcategoria, string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, string cantidad) {
+            this.registrarProductoAsync(idcategoria, codigo, nombre, descripcion, fechaelab, fechaexp, cantidad, null);
         }
         
         /// <remarks/>
-        public void registrarProductoAsync(int idcategoria, string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, int cantidad, string estado, object userState) {
+        public void registrarProductoAsync(string idcategoria, string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, string cantidad, object userState) {
             if ((this.registrarProductoOperationCompleted == null)) {
                 this.registrarProductoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnregistrarProductoOperationCompleted);
             }
@@ -277,8 +276,7 @@ namespace ProyectoMovil.com.somee.proyectomovil22 {
                         descripcion,
                         fechaelab,
                         fechaexp,
-                        cantidad,
-                        estado}, this.registrarProductoOperationCompleted, userState);
+                        cantidad}, this.registrarProductoOperationCompleted, userState);
         }
         
         private void OnregistrarProductoOperationCompleted(object arg) {
@@ -290,9 +288,8 @@ namespace ProyectoMovil.com.somee.proyectomovil22 {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/modificarProducto", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void modificarProducto(int id, int idcate, string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, int cantidad, string estado) {
+        public void modificarProducto(string idcate, string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, int cantidad, string estado, int id) {
             this.Invoke("modificarProducto", new object[] {
-                        id,
                         idcate,
                         codigo,
                         nombre,
@@ -300,21 +297,21 @@ namespace ProyectoMovil.com.somee.proyectomovil22 {
                         fechaelab,
                         fechaexp,
                         cantidad,
-                        estado});
+                        estado,
+                        id});
         }
         
         /// <remarks/>
-        public void modificarProductoAsync(int id, int idcate, string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, int cantidad, string estado) {
-            this.modificarProductoAsync(id, idcate, codigo, nombre, descripcion, fechaelab, fechaexp, cantidad, estado, null);
+        public void modificarProductoAsync(string idcate, string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, int cantidad, string estado, int id) {
+            this.modificarProductoAsync(idcate, codigo, nombre, descripcion, fechaelab, fechaexp, cantidad, estado, id, null);
         }
         
         /// <remarks/>
-        public void modificarProductoAsync(int id, int idcate, string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, int cantidad, string estado, object userState) {
+        public void modificarProductoAsync(string idcate, string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, int cantidad, string estado, int id, object userState) {
             if ((this.modificarProductoOperationCompleted == null)) {
                 this.modificarProductoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnmodificarProductoOperationCompleted);
             }
             this.InvokeAsync("modificarProducto", new object[] {
-                        id,
                         idcate,
                         codigo,
                         nombre,
@@ -322,7 +319,8 @@ namespace ProyectoMovil.com.somee.proyectomovil22 {
                         fechaelab,
                         fechaexp,
                         cantidad,
-                        estado}, this.modificarProductoOperationCompleted, userState);
+                        estado,
+                        id}, this.modificarProductoOperationCompleted, userState);
         }
         
         private void OnmodificarProductoOperationCompleted(object arg) {
@@ -363,18 +361,18 @@ namespace ProyectoMovil.com.somee.proyectomovil22 {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/eliminarProducto", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void eliminarProducto(string id) {
+        public void eliminarProducto(int id) {
             this.Invoke("eliminarProducto", new object[] {
                         id});
         }
         
         /// <remarks/>
-        public void eliminarProductoAsync(string id) {
+        public void eliminarProductoAsync(int id) {
             this.eliminarProductoAsync(id, null);
         }
         
         /// <remarks/>
-        public void eliminarProductoAsync(string id, object userState) {
+        public void eliminarProductoAsync(int id, object userState) {
             if ((this.eliminarProductoOperationCompleted == null)) {
                 this.eliminarProductoOperationCompleted = new System.Threading.SendOrPostCallback(this.OneliminarProductoOperationCompleted);
             }
@@ -421,27 +419,27 @@ namespace ProyectoMovil.com.somee.proyectomovil22 {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/actualizarCategoria", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void actualizarCategoria(int id, string tipo, string descripcion) {
+        public void actualizarCategoria(string tipo, string descripcion, int id) {
             this.Invoke("actualizarCategoria", new object[] {
-                        id,
                         tipo,
-                        descripcion});
+                        descripcion,
+                        id});
         }
         
         /// <remarks/>
-        public void actualizarCategoriaAsync(int id, string tipo, string descripcion) {
-            this.actualizarCategoriaAsync(id, tipo, descripcion, null);
+        public void actualizarCategoriaAsync(string tipo, string descripcion, int id) {
+            this.actualizarCategoriaAsync(tipo, descripcion, id, null);
         }
         
         /// <remarks/>
-        public void actualizarCategoriaAsync(int id, string tipo, string descripcion, object userState) {
+        public void actualizarCategoriaAsync(string tipo, string descripcion, int id, object userState) {
             if ((this.actualizarCategoriaOperationCompleted == null)) {
                 this.actualizarCategoriaOperationCompleted = new System.Threading.SendOrPostCallback(this.OnactualizarCategoriaOperationCompleted);
             }
             this.InvokeAsync("actualizarCategoria", new object[] {
-                        id,
                         tipo,
-                        descripcion}, this.actualizarCategoriaOperationCompleted, userState);
+                        descripcion,
+                        id}, this.actualizarCategoriaOperationCompleted, userState);
         }
         
         private void OnactualizarCategoriaOperationCompleted(object arg) {
@@ -453,23 +451,23 @@ namespace ProyectoMovil.com.somee.proyectomovil22 {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/eliminarCategoria", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void eliminarCategoria(int idcategoria) {
+        public void eliminarCategoria(int id) {
             this.Invoke("eliminarCategoria", new object[] {
-                        idcategoria});
+                        id});
         }
         
         /// <remarks/>
-        public void eliminarCategoriaAsync(int idcategoria) {
-            this.eliminarCategoriaAsync(idcategoria, null);
+        public void eliminarCategoriaAsync(int id) {
+            this.eliminarCategoriaAsync(id, null);
         }
         
         /// <remarks/>
-        public void eliminarCategoriaAsync(int idcategoria, object userState) {
+        public void eliminarCategoriaAsync(int id, object userState) {
             if ((this.eliminarCategoriaOperationCompleted == null)) {
                 this.eliminarCategoriaOperationCompleted = new System.Threading.SendOrPostCallback(this.OneliminarCategoriaOperationCompleted);
             }
             this.InvokeAsync("eliminarCategoria", new object[] {
-                        idcategoria}, this.eliminarCategoriaOperationCompleted, userState);
+                        id}, this.eliminarCategoriaOperationCompleted, userState);
         }
         
         private void OneliminarCategoriaOperationCompleted(object arg) {
@@ -546,33 +544,33 @@ namespace ProyectoMovil.com.somee.proyectomovil22 {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/actualizarProveedor", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void actualizarProveedor(int id, string nombre, string ruc, string direccion, string telefono, string correo) {
+        public void actualizarProveedor(string nombre, string ruc, string direccion, string telefono, string correo, int id) {
             this.Invoke("actualizarProveedor", new object[] {
-                        id,
                         nombre,
                         ruc,
                         direccion,
                         telefono,
-                        correo});
+                        correo,
+                        id});
         }
         
         /// <remarks/>
-        public void actualizarProveedorAsync(int id, string nombre, string ruc, string direccion, string telefono, string correo) {
-            this.actualizarProveedorAsync(id, nombre, ruc, direccion, telefono, correo, null);
+        public void actualizarProveedorAsync(string nombre, string ruc, string direccion, string telefono, string correo, int id) {
+            this.actualizarProveedorAsync(nombre, ruc, direccion, telefono, correo, id, null);
         }
         
         /// <remarks/>
-        public void actualizarProveedorAsync(int id, string nombre, string ruc, string direccion, string telefono, string correo, object userState) {
+        public void actualizarProveedorAsync(string nombre, string ruc, string direccion, string telefono, string correo, int id, object userState) {
             if ((this.actualizarProveedorOperationCompleted == null)) {
                 this.actualizarProveedorOperationCompleted = new System.Threading.SendOrPostCallback(this.OnactualizarProveedorOperationCompleted);
             }
             this.InvokeAsync("actualizarProveedor", new object[] {
-                        id,
                         nombre,
                         ruc,
                         direccion,
                         telefono,
-                        correo}, this.actualizarProveedorOperationCompleted, userState);
+                        correo,
+                        id}, this.actualizarProveedorOperationCompleted, userState);
         }
         
         private void OnactualizarProveedorOperationCompleted(object arg) {

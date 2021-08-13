@@ -31,14 +31,13 @@
       <s:element name="registrarProducto">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="idcategoria" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="idcategoria" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="codigo" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="descripcion" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="fechaelab" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="fechaexp" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="cantidad" type="s:int" />
-            <s:element minOccurs="0" maxOccurs="1" name="estado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cantidad" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -48,8 +47,7 @@
       <s:element name="modificarProducto">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="idcate" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="idcate" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="codigo" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="descripcion" type="s:string" />
@@ -57,6 +55,7 @@
             <s:element minOccurs="0" maxOccurs="1" name="fechaexp" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="cantidad" type="s:int" />
             <s:element minOccurs="0" maxOccurs="1" name="estado" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -87,7 +86,7 @@
       <s:element name="eliminarProducto">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -108,9 +107,9 @@
       <s:element name="actualizarCategoria">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
             <s:element minOccurs="0" maxOccurs="1" name="tipo" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="descripcion" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -120,7 +119,7 @@
       <s:element name="eliminarCategoria">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="idcategoria" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -165,12 +164,12 @@
       <s:element name="actualizarProveedor">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
             <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="ruc" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="direccion" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="telefono" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="correo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>

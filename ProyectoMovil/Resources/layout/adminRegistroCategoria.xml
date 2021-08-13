@@ -17,30 +17,26 @@
         android:layout_height="477.5dp"
         android:id="@+id/linearLayout2"
         android:background="@drawable/xmlredondeo">
-        <LinearLayout
+            <LinearLayout
             android:orientation="horizontal"
             android:minWidth="25px"
             android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:id="@+id/linearLayout3"
-            android:layout_marginTop="15.5dp">
+            android:id="@+id/linearLayout3">
             <EditText
                 android:inputType="textMultiLine"
                 android:layout_width="213.0dp"
                 android:layout_height="match_parent"
-                android:id="@+id/txtBuscarcat"
-                android:background="@drawable/busquedatext"
-                android:layout_marginTop="2.0dp"
-                android:layout_marginLeft="10.5dp" />
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:id="@+id/txtBuscarcat" />
+            <Button
+                android:text="BUSCAR"
+                android:layout_width="121.0dp"
+                android:layout_height="wrap_content"
                 android:id="@+id/btnbuscarcat"
-                android:background="@mipmap/lupa"
-                android:layout_marginLeft="8.5dp" />
+                android:layout_marginLeft="0.0dp" />
         </LinearLayout>
-        <LinearLayout
+    <LinearLayout
             android:orientation="horizontal"
             android:minWidth="25px"
             android:minHeight="25px"
