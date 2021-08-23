@@ -5,14 +5,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center">
+    android:gravity="center"
+    android:background="@mipmap/wallmovil">
     <LinearLayout
         android:orientation="vertical"
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="342.5dp"
         android:layout_height="365.5dp"
-        android:id="@+id/linearLayout1">
+        android:id="@+id/linearLayout1"
+        android:background="@drawable/xmlredondeo">
         <TextView
             android:text="INICIO DE SESION"
             android:layout_width="match_parent"

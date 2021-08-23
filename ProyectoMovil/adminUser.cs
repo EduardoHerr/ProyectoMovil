@@ -114,6 +114,7 @@ namespace ProyectoMovil
 				txtClave.Text = ds.Tables[0].Rows[0]["USUCLAVE"].ToString();
 				id = Convert.ToInt32(ds.Tables[0].Rows[0]["IDUSUARIO"].ToString());
 				
+				//Aqui traigo los datos xd
 				if (ds.Tables[0].Rows[0]["USUROL"].ToString()=="A")
 				{
 					spnRol.SetSelection(1);
