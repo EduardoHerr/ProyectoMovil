@@ -60,7 +60,11 @@ namespace ProyectoMovil.com.somee.proyectomovil22 {
         
         private System.Threading.SendOrPostCallback eliminarventaOperationCompleted;
         
-        private System.Threading.SendOrPostCallback eliminarcompraOperationCompleted;
+        private System.Threading.SendOrPostCallback registrarCompraOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback verCompraOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback eliminarCompraOperationCompleted;
         
         private System.Threading.SendOrPostCallback RegistrarUsuarioOperationCompleted;
         
@@ -82,7 +86,7 @@ namespace ProyectoMovil.com.somee.proyectomovil22 {
         
         /// <remarks/>
         public WebService1() {
-            this.Url = "http://proyectomovil22.somee.com/WebService1.asmx";
+            this.Url = "http://www.proyectomovil22.somee.com/WebService1.asmx";
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;
@@ -162,7 +166,13 @@ namespace ProyectoMovil.com.somee.proyectomovil22 {
         public event eliminarventaCompletedEventHandler eliminarventaCompleted;
         
         /// <remarks/>
-        public event eliminarcompraCompletedEventHandler eliminarcompraCompleted;
+        public event registrarCompraCompletedEventHandler registrarCompraCompleted;
+        
+        /// <remarks/>
+        public event verCompraCompletedEventHandler verCompraCompleted;
+        
+        /// <remarks/>
+        public event eliminarCompraCompletedEventHandler eliminarCompraCompleted;
         
         /// <remarks/>
         public event RegistrarUsuarioCompletedEventHandler RegistrarUsuarioCompleted;
@@ -664,30 +674,97 @@ namespace ProyectoMovil.com.somee.proyectomovil22 {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/eliminarcompra", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void eliminarcompra(int id) {
-            this.Invoke("eliminarcompra", new object[] {
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/registrarCompra", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void registrarCompra(string idproveedor, string idproducto, string comcodigo, int comcantidad, float comcostocompra, string comfecha) {
+            this.Invoke("registrarCompra", new object[] {
+                        idproveedor,
+                        idproducto,
+                        comcodigo,
+                        comcantidad,
+                        comcostocompra,
+                        comfecha});
+        }
+        
+        /// <remarks/>
+        public void registrarCompraAsync(string idproveedor, string idproducto, string comcodigo, int comcantidad, float comcostocompra, string comfecha) {
+            this.registrarCompraAsync(idproveedor, idproducto, comcodigo, comcantidad, comcostocompra, comfecha, null);
+        }
+        
+        /// <remarks/>
+        public void registrarCompraAsync(string idproveedor, string idproducto, string comcodigo, int comcantidad, float comcostocompra, string comfecha, object userState) {
+            if ((this.registrarCompraOperationCompleted == null)) {
+                this.registrarCompraOperationCompleted = new System.Threading.SendOrPostCallback(this.OnregistrarCompraOperationCompleted);
+            }
+            this.InvokeAsync("registrarCompra", new object[] {
+                        idproveedor,
+                        idproducto,
+                        comcodigo,
+                        comcantidad,
+                        comcostocompra,
+                        comfecha}, this.registrarCompraOperationCompleted, userState);
+        }
+        
+        private void OnregistrarCompraOperationCompleted(object arg) {
+            if ((this.registrarCompraCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.registrarCompraCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/verCompra", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataSet verCompra(string codigo) {
+            object[] results = this.Invoke("verCompra", new object[] {
+                        codigo});
+            return ((System.Data.DataSet)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void verCompraAsync(string codigo) {
+            this.verCompraAsync(codigo, null);
+        }
+        
+        /// <remarks/>
+        public void verCompraAsync(string codigo, object userState) {
+            if ((this.verCompraOperationCompleted == null)) {
+                this.verCompraOperationCompleted = new System.Threading.SendOrPostCallback(this.OnverCompraOperationCompleted);
+            }
+            this.InvokeAsync("verCompra", new object[] {
+                        codigo}, this.verCompraOperationCompleted, userState);
+        }
+        
+        private void OnverCompraOperationCompleted(object arg) {
+            if ((this.verCompraCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.verCompraCompleted(this, new verCompraCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/eliminarCompra", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void eliminarCompra(int id) {
+            this.Invoke("eliminarCompra", new object[] {
                         id});
         }
         
         /// <remarks/>
-        public void eliminarcompraAsync(int id) {
-            this.eliminarcompraAsync(id, null);
+        public void eliminarCompraAsync(int id) {
+            this.eliminarCompraAsync(id, null);
         }
         
         /// <remarks/>
-        public void eliminarcompraAsync(int id, object userState) {
-            if ((this.eliminarcompraOperationCompleted == null)) {
-                this.eliminarcompraOperationCompleted = new System.Threading.SendOrPostCallback(this.OneliminarcompraOperationCompleted);
+        public void eliminarCompraAsync(int id, object userState) {
+            if ((this.eliminarCompraOperationCompleted == null)) {
+                this.eliminarCompraOperationCompleted = new System.Threading.SendOrPostCallback(this.OneliminarCompraOperationCompleted);
             }
-            this.InvokeAsync("eliminarcompra", new object[] {
-                        id}, this.eliminarcompraOperationCompleted, userState);
+            this.InvokeAsync("eliminarCompra", new object[] {
+                        id}, this.eliminarCompraOperationCompleted, userState);
         }
         
-        private void OneliminarcompraOperationCompleted(object arg) {
-            if ((this.eliminarcompraCompleted != null)) {
+        private void OneliminarCompraOperationCompleted(object arg) {
+            if ((this.eliminarCompraCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.eliminarcompraCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.eliminarCompraCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1148,7 +1225,37 @@ namespace ProyectoMovil.com.somee.proyectomovil22 {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void eliminarcompraCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    public delegate void registrarCompraCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void verCompraCompletedEventHandler(object sender, verCompraCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class verCompraCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal verCompraCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataSet Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataSet)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void eliminarCompraCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]

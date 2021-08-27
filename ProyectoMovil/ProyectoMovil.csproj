@@ -170,10 +170,10 @@
     <AndroidResource Include="Resources\layout\adminRegistroProducto.xml" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://proyectomovil22.somee.com/WebService1.asmx">
+    <WebReferenceUrl Include="http://www.proyectomovil22.somee.com/WebService1.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\com.somee.proyectomovil22\</RelPath>
-      <UpdateFromURL>http://proyectomovil22.somee.com/WebService1.asmx</UpdateFromURL>
+      <UpdateFromURL>http://www.proyectomovil22.somee.com/WebService1.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
