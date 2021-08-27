@@ -170,6 +170,9 @@
     <AndroidResource Include="Resources\layout\adminRegistroProducto.xml" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidResource Include="Resources\layout\adminRegistroProveedor.xml" />
+  </ItemGroup>
+  <ItemGroup>
     <WebReferenceUrl Include="http://www.proyectomovil22.somee.com/WebService1.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\com.somee.proyectomovil22\</RelPath>
@@ -186,9 +189,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Web References\com.somee.proyectomovil22\WebService1.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\adminRegistroProveedor.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

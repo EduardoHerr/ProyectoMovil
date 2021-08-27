@@ -78,8 +78,7 @@ namespace ProyectoMovil
                     txtdireccion.Text = ds.Tables[0].Rows[0]["PROVDIRECCION"].ToString();
                     txttelefono.Text = ds.Tables[0].Rows[0]["PROVTELEFONO"].ToString();
                     txtcorreo.Text = ds.Tables[0].Rows[0]["PROVCORREO"].ToString();
-
-                    txtruc.Text = ds.Tables[0].Rows[0]["PROVRUC"].ToString();
+                    id = Convert.ToInt32(ds.Tables[0].Rows[0]["IDPROVEEDOR"].ToString());
                 }
                 catch (Exception)
                 {
