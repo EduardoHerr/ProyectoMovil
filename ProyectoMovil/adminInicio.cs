@@ -23,7 +23,7 @@ namespace ProyectoMovil
 			var btnCategoria = FindViewById<Button>(Resource.Id.btnCategoria);
 			var btnProducto = FindViewById<Button>(Resource.Id.btnProductos);
 			var btnCliente = FindViewById<Button>(Resource.Id.btnInicioCliente);
-
+			var btnProveedor = FindViewById<Button>(Resource.Id.btnpro );
 			btnCliente.Click += delegate
 			{
 				Intent intent = new Intent(this, typeof(adminCliente));
@@ -43,6 +43,12 @@ namespace ProyectoMovil
 			btnProducto.Click += delegate
 			{
 				Intent intent = new Intent(this, typeof(adminProducto));
+				StartActivity(intent);
+			};
+
+			btnProveedor.Click += delegate
+			{
+				Intent intent = new Intent(this, typeof(adminProveedor));
 				StartActivity(intent);
 			};
 		}

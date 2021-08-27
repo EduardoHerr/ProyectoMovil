@@ -78,19 +78,19 @@
             android:id="@+id/linearLayout5"
             android:layout_marginTop="22.0dp">
             <Button
-                android:text="Button"
+                android:text="PROVEEDORES"
                 android:layout_width="150dp"
                 android:layout_height="match_parent"
-                android:id="@+id/button3"
+                android:id="@+id/btnpro"
                 android:layout_marginLeft="26.5dp"
                 android:layout_marginRight="15dp"
                 android:background="@android:color/holo_blue_dark"
                 android:textColor="@android:color/background_light"/>
             <Button
-                android:text="Button"
+                android:text="COMPRA"
                 android:layout_width="150dp"
                 android:layout_height="match_parent"
-                android:id="@+id/button4"
+                android:id="@+id/btncompra"
                 android:layout_marginLeft="11.0dp"
                 android:layout_marginRight="15dp"
                 android:background="@android:color/holo_blue_dark"
