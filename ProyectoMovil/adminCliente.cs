@@ -78,12 +78,13 @@ namespace ProyectoMovil
                     telfc.Text = ds.Tables[0].Rows[0]["CLITELEFONO"].ToString();
                     id = Convert.ToInt32(ds.Tables[0].Rows[0]["IDCLIENTE"].ToString());
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
+                    Toast.MakeText(this, "No hay datos", ToastLength.Short).Show();
 
-                    throw;
                 }
-                
+
+
             };
             
             void limpiar()

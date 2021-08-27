@@ -87,11 +87,12 @@ namespace ProyectoMovil
                     txtcantidadpro.Text = ds.Tables[0].Rows[0]["PRODCANTIDAD"].ToString();
                     id = Convert.ToInt32(ds.Tables[0].Rows[0]["IDPRODUCTO"].ToString());
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
+                    Toast.MakeText(this, "No hay datos", ToastLength.Short).Show();
 
-                    throw;
                 }
+
 
             };
 

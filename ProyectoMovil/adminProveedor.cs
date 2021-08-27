@@ -17,6 +17,7 @@ namespace ProyectoMovil
     public class adminProveedor : Activity
     {
         static int id = 0;
+        string buscar;
         connectDB db = new connectDB();
         WebService1 web = new WebService1();
         protected override void OnCreate(Bundle savedInstanceState)
@@ -80,12 +81,16 @@ namespace ProyectoMovil
                     txtcorreo.Text = ds.Tables[0].Rows[0]["PROVCORREO"].ToString();
                     id = Convert.ToInt32(ds.Tables[0].Rows[0]["IDPROVEEDOR"].ToString());
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
-
-                    throw;
+                    Toast.MakeText(this, "No hay datos", ToastLength.Short).Show();
+                    
                 }
+            
+                    
 
+
+                
             };
 
 

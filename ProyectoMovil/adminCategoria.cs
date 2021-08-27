@@ -74,11 +74,12 @@ namespace ProyectoMovil
                     txtdesccat.Text = ds.Tables[0].Rows[0]["CATDESCRIPCION"].ToString();
                     id = Convert.ToInt32(ds.Tables[0].Rows[0]["IDCATEGORIAPRODUCTO"].ToString());
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
+                    Toast.MakeText(this, "No hay datos", ToastLength.Short).Show();
 
-                    throw;
                 }
+
 
             };
 
