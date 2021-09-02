@@ -211,7 +211,7 @@
             <s:element minOccurs="0" maxOccurs="1" name="idcliente" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="vntcodigo" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="vntcantidad" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="vntcostoventa" type="s:float" />
+            <s:element minOccurs="1" maxOccurs="1" name="vntcostoventa" type="s:double" />
             <s:element minOccurs="0" maxOccurs="1" name="vntfecha" type="s:string" />
           </s:sequence>
         </s:complexType>

@@ -663,7 +663,7 @@ namespace ProyectoMovil.com.somee.proyectomovil22 {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/registrarVenta", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void registrarVenta(string idproducto, string idcliente, string vntcodigo, int vntcantidad, float vntcostoventa, string vntfecha) {
+        public void registrarVenta(string idproducto, string idcliente, string vntcodigo, int vntcantidad, double vntcostoventa, string vntfecha) {
             this.Invoke("registrarVenta", new object[] {
                         idproducto,
                         idcliente,
@@ -674,12 +674,12 @@ namespace ProyectoMovil.com.somee.proyectomovil22 {
         }
         
         /// <remarks/>
-        public void registrarVentaAsync(string idproducto, string idcliente, string vntcodigo, int vntcantidad, float vntcostoventa, string vntfecha) {
+        public void registrarVentaAsync(string idproducto, string idcliente, string vntcodigo, int vntcantidad, double vntcostoventa, string vntfecha) {
             this.registrarVentaAsync(idproducto, idcliente, vntcodigo, vntcantidad, vntcostoventa, vntfecha, null);
         }
         
         /// <remarks/>
-        public void registrarVentaAsync(string idproducto, string idcliente, string vntcodigo, int vntcantidad, float vntcostoventa, string vntfecha, object userState) {
+        public void registrarVentaAsync(string idproducto, string idcliente, string vntcodigo, int vntcantidad, double vntcostoventa, string vntfecha, object userState) {
             if ((this.registrarVentaOperationCompleted == null)) {
                 this.registrarVentaOperationCompleted = new System.Threading.SendOrPostCallback(this.OnregistrarVentaOperationCompleted);
             }
