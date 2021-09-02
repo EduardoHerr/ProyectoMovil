@@ -279,7 +279,7 @@
             <s:element minOccurs="0" maxOccurs="1" name="idproducto" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="comcodigo" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="comcantidad" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="comcostocompra" type="s:float" />
+            <s:element minOccurs="1" maxOccurs="1" name="comcostocompra" type="s:double" />
             <s:element minOccurs="0" maxOccurs="1" name="comfecha" type="s:string" />
           </s:sequence>
         </s:complexType>

@@ -818,7 +818,7 @@ namespace ProyectoMovil.com.somee.proyectomovil22 {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/registrarCompra", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void registrarCompra(string idproveedor, string idproducto, string comcodigo, int comcantidad, float comcostocompra, string comfecha) {
+        public void registrarCompra(string idproveedor, string idproducto, string comcodigo, int comcantidad, double comcostocompra, string comfecha) {
             this.Invoke("registrarCompra", new object[] {
                         idproveedor,
                         idproducto,
@@ -829,12 +829,12 @@ namespace ProyectoMovil.com.somee.proyectomovil22 {
         }
         
         /// <remarks/>
-        public void registrarCompraAsync(string idproveedor, string idproducto, string comcodigo, int comcantidad, float comcostocompra, string comfecha) {
+        public void registrarCompraAsync(string idproveedor, string idproducto, string comcodigo, int comcantidad, double comcostocompra, string comfecha) {
             this.registrarCompraAsync(idproveedor, idproducto, comcodigo, comcantidad, comcostocompra, comfecha, null);
         }
         
         /// <remarks/>
-        public void registrarCompraAsync(string idproveedor, string idproducto, string comcodigo, int comcantidad, float comcostocompra, string comfecha, object userState) {
+        public void registrarCompraAsync(string idproveedor, string idproducto, string comcodigo, int comcantidad, double comcostocompra, string comfecha, object userState) {
             if ((this.registrarCompraOperationCompleted == null)) {
                 this.registrarCompraOperationCompleted = new System.Threading.SendOrPostCallback(this.OnregistrarCompraOperationCompleted);
             }

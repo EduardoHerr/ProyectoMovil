@@ -17,6 +17,7 @@ namespace ProyectoMovil
     public class adminVenta : Activity
     {
         static int id = 0;
+        static int cantidad = 0;
         connectDB db = new connectDB();
         WebService1 web = new WebService1();
         protected override void OnCreate(Bundle savedInstanceState)
@@ -61,7 +62,18 @@ namespace ProyectoMovil
             };
 
             btnEliminarventa.Click += delegate 
-            { 
+            {
+                if (id == 0)
+                {
+                    Toast.MakeText(this, "No hay datos", ToastLength.Short).Show();
+                }
+                else
+                {
+                    web.eliminarventa(id);
+                    limpiar();
+                    Toast.MakeText(this, "Registro Eliminado", ToastLength.Short).Show();
+                }
+
             };
 
             btnCalcularventa.Click += delegate 
@@ -72,10 +84,11 @@ namespace ProyectoMovil
             {
                 web.registrarVenta(
                 txtidproductoventa.Text, txtidclienteventa.Text, txtcodigoventa.Text,Convert.ToInt32(txtcantidadventa.Text), Convert.ToDouble(txtcostoventa.Text), txtfechaventa.Text);
-                limpiar();
+                
                 Toast.MakeText(this, "Registro Creado", ToastLength.Short).Show();
 
-               web.RestarProducto(Convert.ToInt32(txtcantidadventa.Text),Convert.ToInt32(txtidproductoventa.Text));
+               web.RestarProducto(Convert.ToInt32(txtcantidadventa.Text), Convert.ToInt32(txtidproductoventa.Text));
+                limpiar();
             };
 
              void limpiar()
