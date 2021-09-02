@@ -37,9 +37,9 @@ namespace ProyectoMovil
 			var spnRol = FindViewById<Spinner>(Resource.Id.spinner1);
 			var btnEliminar = FindViewById<Button>(Resource.Id.btnEliminar);
 
-			roles.Add("--SELECCIONE--");
-			roles.Add("Administrador");
-			roles.Add("Usuario");
+			roles.Add("--SELECCIONE--");//0
+			roles.Add("Administrador");//1
+			roles.Add("Usuario");//2
 			
 			var adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleSpinnerItem, roles);
 			spnRol.Adapter = adapter;
