@@ -58,7 +58,15 @@ namespace ProyectoMovil.com.somee.proyectomovil22 {
         
         private System.Threading.SendOrPostCallback eliminarProveedorOperationCompleted;
         
+        private System.Threading.SendOrPostCallback registrarVentaOperationCompleted;
+        
         private System.Threading.SendOrPostCallback eliminarventaOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback verVentaOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback AumentarProductoOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback RestarProductoOperationCompleted;
         
         private System.Threading.SendOrPostCallback registrarCompraOperationCompleted;
         
@@ -163,7 +171,19 @@ namespace ProyectoMovil.com.somee.proyectomovil22 {
         public event eliminarProveedorCompletedEventHandler eliminarProveedorCompleted;
         
         /// <remarks/>
+        public event registrarVentaCompletedEventHandler registrarVentaCompleted;
+        
+        /// <remarks/>
         public event eliminarventaCompletedEventHandler eliminarventaCompleted;
+        
+        /// <remarks/>
+        public event verVentaCompletedEventHandler verVentaCompleted;
+        
+        /// <remarks/>
+        public event AumentarProductoCompletedEventHandler AumentarProductoCompleted;
+        
+        /// <remarks/>
+        public event RestarProductoCompletedEventHandler RestarProductoCompleted;
         
         /// <remarks/>
         public event registrarCompraCompletedEventHandler registrarCompraCompleted;
@@ -258,9 +278,8 @@ namespace ProyectoMovil.com.somee.proyectomovil22 {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/registrarProducto", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void registrarProducto(string idcategoria, string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, string cantidad) {
+        public void registrarProducto(string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, string cantidad) {
             this.Invoke("registrarProducto", new object[] {
-                        idcategoria,
                         codigo,
                         nombre,
                         descripcion,
@@ -270,17 +289,16 @@ namespace ProyectoMovil.com.somee.proyectomovil22 {
         }
         
         /// <remarks/>
-        public void registrarProductoAsync(string idcategoria, string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, string cantidad) {
-            this.registrarProductoAsync(idcategoria, codigo, nombre, descripcion, fechaelab, fechaexp, cantidad, null);
+        public void registrarProductoAsync(string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, string cantidad) {
+            this.registrarProductoAsync(codigo, nombre, descripcion, fechaelab, fechaexp, cantidad, null);
         }
         
         /// <remarks/>
-        public void registrarProductoAsync(string idcategoria, string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, string cantidad, object userState) {
+        public void registrarProductoAsync(string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, string cantidad, object userState) {
             if ((this.registrarProductoOperationCompleted == null)) {
                 this.registrarProductoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnregistrarProductoOperationCompleted);
             }
             this.InvokeAsync("registrarProducto", new object[] {
-                        idcategoria,
                         codigo,
                         nombre,
                         descripcion,
@@ -298,9 +316,8 @@ namespace ProyectoMovil.com.somee.proyectomovil22 {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/modificarProducto", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void modificarProducto(string idcate, string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, string cantidad, int id) {
+        public void modificarProducto(string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, string cantidad, int id) {
             this.Invoke("modificarProducto", new object[] {
-                        idcate,
                         codigo,
                         nombre,
                         descripcion,
@@ -311,17 +328,16 @@ namespace ProyectoMovil.com.somee.proyectomovil22 {
         }
         
         /// <remarks/>
-        public void modificarProductoAsync(string idcate, string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, string cantidad, int id) {
-            this.modificarProductoAsync(idcate, codigo, nombre, descripcion, fechaelab, fechaexp, cantidad, id, null);
+        public void modificarProductoAsync(string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, string cantidad, int id) {
+            this.modificarProductoAsync(codigo, nombre, descripcion, fechaelab, fechaexp, cantidad, id, null);
         }
         
         /// <remarks/>
-        public void modificarProductoAsync(string idcate, string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, string cantidad, int id, object userState) {
+        public void modificarProductoAsync(string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, string cantidad, int id, object userState) {
             if ((this.modificarProductoOperationCompleted == null)) {
                 this.modificarProductoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnmodificarProductoOperationCompleted);
             }
             this.InvokeAsync("modificarProducto", new object[] {
-                        idcate,
                         codigo,
                         nombre,
                         descripcion,
@@ -646,6 +662,44 @@ namespace ProyectoMovil.com.somee.proyectomovil22 {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/registrarVenta", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void registrarVenta(string idproducto, string idcliente, string vntcodigo, int vntcantidad, float vntcostoventa, string vntfecha) {
+            this.Invoke("registrarVenta", new object[] {
+                        idproducto,
+                        idcliente,
+                        vntcodigo,
+                        vntcantidad,
+                        vntcostoventa,
+                        vntfecha});
+        }
+        
+        /// <remarks/>
+        public void registrarVentaAsync(string idproducto, string idcliente, string vntcodigo, int vntcantidad, float vntcostoventa, string vntfecha) {
+            this.registrarVentaAsync(idproducto, idcliente, vntcodigo, vntcantidad, vntcostoventa, vntfecha, null);
+        }
+        
+        /// <remarks/>
+        public void registrarVentaAsync(string idproducto, string idcliente, string vntcodigo, int vntcantidad, float vntcostoventa, string vntfecha, object userState) {
+            if ((this.registrarVentaOperationCompleted == null)) {
+                this.registrarVentaOperationCompleted = new System.Threading.SendOrPostCallback(this.OnregistrarVentaOperationCompleted);
+            }
+            this.InvokeAsync("registrarVenta", new object[] {
+                        idproducto,
+                        idcliente,
+                        vntcodigo,
+                        vntcantidad,
+                        vntcostoventa,
+                        vntfecha}, this.registrarVentaOperationCompleted, userState);
+        }
+        
+        private void OnregistrarVentaOperationCompleted(object arg) {
+            if ((this.registrarVentaCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.registrarVentaCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/eliminarventa", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public void eliminarventa(int id) {
             this.Invoke("eliminarventa", new object[] {
@@ -670,6 +724,95 @@ namespace ProyectoMovil.com.somee.proyectomovil22 {
             if ((this.eliminarventaCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.eliminarventaCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/verVenta", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataSet verVenta(int id) {
+            object[] results = this.Invoke("verVenta", new object[] {
+                        id});
+            return ((System.Data.DataSet)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void verVentaAsync(int id) {
+            this.verVentaAsync(id, null);
+        }
+        
+        /// <remarks/>
+        public void verVentaAsync(int id, object userState) {
+            if ((this.verVentaOperationCompleted == null)) {
+                this.verVentaOperationCompleted = new System.Threading.SendOrPostCallback(this.OnverVentaOperationCompleted);
+            }
+            this.InvokeAsync("verVenta", new object[] {
+                        id}, this.verVentaOperationCompleted, userState);
+        }
+        
+        private void OnverVentaOperationCompleted(object arg) {
+            if ((this.verVentaCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.verVentaCompleted(this, new verVentaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/AumentarProducto", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void AumentarProducto(int cant, int id) {
+            this.Invoke("AumentarProducto", new object[] {
+                        cant,
+                        id});
+        }
+        
+        /// <remarks/>
+        public void AumentarProductoAsync(int cant, int id) {
+            this.AumentarProductoAsync(cant, id, null);
+        }
+        
+        /// <remarks/>
+        public void AumentarProductoAsync(int cant, int id, object userState) {
+            if ((this.AumentarProductoOperationCompleted == null)) {
+                this.AumentarProductoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAumentarProductoOperationCompleted);
+            }
+            this.InvokeAsync("AumentarProducto", new object[] {
+                        cant,
+                        id}, this.AumentarProductoOperationCompleted, userState);
+        }
+        
+        private void OnAumentarProductoOperationCompleted(object arg) {
+            if ((this.AumentarProductoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.AumentarProductoCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/RestarProducto", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void RestarProducto(int cant, int id) {
+            this.Invoke("RestarProducto", new object[] {
+                        cant,
+                        id});
+        }
+        
+        /// <remarks/>
+        public void RestarProductoAsync(int cant, int id) {
+            this.RestarProductoAsync(cant, id, null);
+        }
+        
+        /// <remarks/>
+        public void RestarProductoAsync(int cant, int id, object userState) {
+            if ((this.RestarProductoOperationCompleted == null)) {
+                this.RestarProductoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnRestarProductoOperationCompleted);
+            }
+            this.InvokeAsync("RestarProducto", new object[] {
+                        cant,
+                        id}, this.RestarProductoOperationCompleted, userState);
+        }
+        
+        private void OnRestarProductoOperationCompleted(object arg) {
+            if ((this.RestarProductoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.RestarProductoCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -713,24 +856,24 @@ namespace ProyectoMovil.com.somee.proyectomovil22 {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/verCompra", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public System.Data.DataSet verCompra(string codigo) {
+        public System.Data.DataSet verCompra(int id) {
             object[] results = this.Invoke("verCompra", new object[] {
-                        codigo});
+                        id});
             return ((System.Data.DataSet)(results[0]));
         }
         
         /// <remarks/>
-        public void verCompraAsync(string codigo) {
-            this.verCompraAsync(codigo, null);
+        public void verCompraAsync(int id) {
+            this.verCompraAsync(id, null);
         }
         
         /// <remarks/>
-        public void verCompraAsync(string codigo, object userState) {
+        public void verCompraAsync(int id, object userState) {
             if ((this.verCompraOperationCompleted == null)) {
                 this.verCompraOperationCompleted = new System.Threading.SendOrPostCallback(this.OnverCompraOperationCompleted);
             }
             this.InvokeAsync("verCompra", new object[] {
-                        codigo}, this.verCompraOperationCompleted, userState);
+                        id}, this.verCompraOperationCompleted, userState);
         }
         
         private void OnverCompraOperationCompleted(object arg) {
@@ -1221,7 +1364,45 @@ namespace ProyectoMovil.com.somee.proyectomovil22 {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void registrarVentaCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void eliminarventaCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void verVentaCompletedEventHandler(object sender, verVentaCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class verVentaCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal verVentaCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataSet Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataSet)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void AumentarProductoCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void RestarProductoCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]

@@ -31,7 +31,6 @@
       <s:element name="registrarProducto">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="idcategoria" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="codigo" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="descripcion" type="s:string" />
@@ -47,7 +46,6 @@
       <s:element name="modificarProducto">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="idcate" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="codigo" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="descripcion" type="s:string" />
@@ -206,6 +204,21 @@
       <s:element name="eliminarProveedorResponse">
         <s:complexType />
       </s:element>
+      <s:element name="registrarVenta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idproducto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idcliente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vntcodigo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="vntcantidad" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="vntcostoventa" type="s:float" />
+            <s:element minOccurs="0" maxOccurs="1" name="vntfecha" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="registrarVentaResponse">
+        <s:complexType />
+      </s:element>
       <s:element name="eliminarventa">
         <s:complexType>
           <s:sequence>
@@ -214,6 +227,49 @@
         </s:complexType>
       </s:element>
       <s:element name="eliminarventaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="verVenta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="verVentaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="verVentaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AumentarProducto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cant" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AumentarProductoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RestarProducto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cant" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RestarProductoResponse">
         <s:complexType />
       </s:element>
       <s:element name="registrarCompra">
@@ -234,7 +290,7 @@
       <s:element name="verCompra">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="codigo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -475,11 +531,35 @@
   <wsdl:message name="eliminarProveedorSoapOut">
     <wsdl:part name="parameters" element="tns:eliminarProveedorResponse" />
   </wsdl:message>
+  <wsdl:message name="registrarVentaSoapIn">
+    <wsdl:part name="parameters" element="tns:registrarVenta" />
+  </wsdl:message>
+  <wsdl:message name="registrarVentaSoapOut">
+    <wsdl:part name="parameters" element="tns:registrarVentaResponse" />
+  </wsdl:message>
   <wsdl:message name="eliminarventaSoapIn">
     <wsdl:part name="parameters" element="tns:eliminarventa" />
   </wsdl:message>
   <wsdl:message name="eliminarventaSoapOut">
     <wsdl:part name="parameters" element="tns:eliminarventaResponse" />
+  </wsdl:message>
+  <wsdl:message name="verVentaSoapIn">
+    <wsdl:part name="parameters" element="tns:verVenta" />
+  </wsdl:message>
+  <wsdl:message name="verVentaSoapOut">
+    <wsdl:part name="parameters" element="tns:verVentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="AumentarProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:AumentarProducto" />
+  </wsdl:message>
+  <wsdl:message name="AumentarProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:AumentarProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="RestarProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:RestarProducto" />
+  </wsdl:message>
+  <wsdl:message name="RestarProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:RestarProductoResponse" />
   </wsdl:message>
   <wsdl:message name="registrarCompraSoapIn">
     <wsdl:part name="parameters" element="tns:registrarCompra" />
@@ -604,9 +684,25 @@
       <wsdl:input message="tns:eliminarProveedorSoapIn" />
       <wsdl:output message="tns:eliminarProveedorSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="registrarVenta">
+      <wsdl:input message="tns:registrarVentaSoapIn" />
+      <wsdl:output message="tns:registrarVentaSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="eliminarventa">
       <wsdl:input message="tns:eliminarventaSoapIn" />
       <wsdl:output message="tns:eliminarventaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="verVenta">
+      <wsdl:input message="tns:verVentaSoapIn" />
+      <wsdl:output message="tns:verVentaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AumentarProducto">
+      <wsdl:input message="tns:AumentarProductoSoapIn" />
+      <wsdl:output message="tns:AumentarProductoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RestarProducto">
+      <wsdl:input message="tns:RestarProductoSoapIn" />
+      <wsdl:output message="tns:RestarProductoSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="registrarCompra">
       <wsdl:input message="tns:registrarCompraSoapIn" />
@@ -781,8 +877,44 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="registrarVenta">
+      <soap:operation soapAction="http://tempuri.org/registrarVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="eliminarventa">
       <soap:operation soapAction="http://tempuri.org/eliminarventa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verVenta">
+      <soap:operation soapAction="http://tempuri.org/verVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AumentarProducto">
+      <soap:operation soapAction="http://tempuri.org/AumentarProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RestarProducto">
+      <soap:operation soapAction="http://tempuri.org/RestarProducto" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1018,8 +1150,44 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="registrarVenta">
+      <soap12:operation soapAction="http://tempuri.org/registrarVenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="eliminarventa">
       <soap12:operation soapAction="http://tempuri.org/eliminarventa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verVenta">
+      <soap12:operation soapAction="http://tempuri.org/verVenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AumentarProducto">
+      <soap12:operation soapAction="http://tempuri.org/AumentarProducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RestarProducto">
+      <soap12:operation soapAction="http://tempuri.org/RestarProducto" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
