@@ -29,12 +29,12 @@
                 android:inputType="textMultiLine"
                 android:layout_width="213.0dp"
                 android:layout_height="match_parent"
-                android:id="@+id/txtBuscarpro" />
+                android:id="@+id/txtBuscarVenta" />
             <Button
                 android:text="BUSCAR"
                 android:layout_width="121.0dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/btnbuscarpro"
+                android:id="@+id/btnbuscarVenta"
                 android:layout_marginLeft="0.0dp" />
         </LinearLayout>
         <LinearLayout
@@ -54,7 +54,7 @@
             android:layout_height="60dp"
             android:id="@+id/linearLayout4">
             <TextView
-                android:text="Codigo"
+                android:text="Proveedor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView1"
@@ -63,7 +63,7 @@
                 android:inputType="textMultiLine"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/txtcodigopro" />
+                android:id="@+id/txtcliVenta" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
@@ -73,7 +73,7 @@
             android:layout_height="60dp"
             android:id="@+id/linearLayout5">
             <TextView
-                android:text="Nombre"
+                android:text="Producto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView2" />
@@ -81,7 +81,7 @@
                 android:inputType="textMultiLine"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/txtnombrepro" />
+                android:id="@+id/txtproVenta" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
@@ -91,7 +91,7 @@
             android:layout_height="60dp"
             android:id="@+id/linearLayout6">
             <TextView
-                android:text="Descripcion"
+                android:text="Codigo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView2" />
@@ -99,7 +99,7 @@
                 android:inputType="textMultiLine"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/txtdescripcionpro" />
+                android:id="@+id/txtcodigoVenta" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
@@ -109,15 +109,15 @@
             android:layout_height="60dp"
             android:id="@+id/linearLayout7">
             <TextView
-                android:text="Fecha El"
+                android:text="Cantidad"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView2" />
             <EditText
-                android:inputType="date"
+                android:inputType="textMultiLine"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/txtfechaelpro" />
+                android:id="@+id/txtcantidadVenta" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
@@ -127,15 +127,15 @@
             android:layout_height="60dp"
             android:id="@+id/linearLayout8">
             <TextView
-                android:text="Fecha Ex"
+                android:text="Total"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView2" />
             <EditText
-                android:inputType="date"
+                android:inputType="textMultiLine"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/txtfechaexpro" />
+                android:id="@+id/txttotalVenta" />
 
         </LinearLayout>
         <LinearLayout
@@ -146,15 +146,15 @@
             android:layout_height="60dp"
             android:id="@+id/linearLayout12">
             <TextView
-                android:text="Cantidad"
+                android:text="Fecha"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView2" />
             <EditText
-                android:inputType="textMultiLine"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/txtcantidadpro" />
+                 android:inputType="date"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:id="@+id/txtfechaVenta" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
@@ -169,19 +169,19 @@
                 android:text="REGISTRAR"
                 android:layout_width="110.0dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/btnRegistrarpro"
+                android:id="@+id/btnRegistrarVenta"
                 android:layout_marginLeft="10dp" />
             <Button
-                android:text="MODIFICAR"
+                android:text="CALCULAR"
                 android:layout_width="110.0dp"
                 android:layout_height="match_parent"
-                android:id="@+id/btnModificarpro"
+                android:id="@+id/btnCalcularVenta"
                 android:layout_marginLeft="10dp" />
             <Button
                 android:text="ELIMINAR"
                 android:layout_width="110dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/btnEliminarpro"
+                android:id="@+id/btnEliminarVenta"
                 android:layout_marginLeft="10dp" />
         </LinearLayout>
     </LinearLayout>

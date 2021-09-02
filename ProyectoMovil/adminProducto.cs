@@ -30,7 +30,7 @@ namespace ProyectoMovil
             var btnEliminarpro = FindViewById<Button>(Resource.Id.btnEliminarpro);
             var btnBuscarc = FindViewById<Button>(Resource.Id.btnbuscarpro);
             var txtbusqueda = FindViewById<EditText>(Resource.Id.txtBuscarpro);
-            var txtcategoriapro = FindViewById<EditText>(Resource.Id.txtcategoriacatpro);
+            
             var txtcodigopro = FindViewById<EditText>(Resource.Id.txtcodigopro);
             var txtnombrepro = FindViewById<EditText>(Resource.Id.txtnombrepro);
             var txtdescpro = FindViewById<EditText>(Resource.Id.txtdescripcionpro);
@@ -44,7 +44,7 @@ namespace ProyectoMovil
             btnModificarpro.Click += delegate
             {
                 
-                web.modificarProducto(txtcategoriapro.Text, txtcodigopro.Text, 
+                web.modificarProducto(txtcodigopro.Text, 
                     txtnombrepro.Text, txtdescpro.Text,txtfechaeliapro.Text, txtfechaexpro.Text,txtcantidadpro.Text ,id);
                 limpiar();
                 Toast.MakeText(this, "Registro Actualizado", ToastLength.Short).Show();
@@ -67,7 +67,7 @@ namespace ProyectoMovil
 
             btnRegistarpro.Click += delegate
             {
-                web.registrarProducto(txtcategoriapro.Text,
+                web.registrarProducto(
                     txtcodigopro.Text,txtnombrepro.Text, txtdescpro.Text,txtfechaeliapro.Text,txtfechaexpro.Text,txtcantidadpro.Text);
                 limpiar();
                 Toast.MakeText(this, "Registro Creado", ToastLength.Short).Show();
@@ -78,7 +78,7 @@ namespace ProyectoMovil
                 try
                 {
                     DataSet ds = web.cargarDatosProducto(txtbusqueda.Text);
-                    txtcategoriapro.Text = ds.Tables[0].Rows[0]["CATTIPO"].ToString();
+                    
                     txtcodigopro.Text = ds.Tables[0].Rows[0]["PRODCODIGO"].ToString();
                     txtnombrepro.Text = ds.Tables[0].Rows[0]["PRODNOMBRE"].ToString();
                     txtdescpro.Text = ds.Tables[0].Rows[0]["PRODDESC"].ToString();
@@ -100,7 +100,7 @@ namespace ProyectoMovil
 
             void limpiar()
             {
-                txtcodigopro.Text= txtcategoriapro.Text= txtnombrepro.Text
+                txtcodigopro.Text= txtnombrepro.Text
                     = txtdescpro.Text = txtfechaexpro.Text = txtfechaeliapro.Text = txtcantidadpro.Text = "";
                 id = 0;
             }

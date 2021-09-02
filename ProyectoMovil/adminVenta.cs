@@ -11,13 +11,13 @@ using System.Text;
 
 namespace ProyectoMovil
 {
-    [Activity(Label = "Compra")]
-    public class adminCompra : Activity
+    [Activity(Label = "adminVenta")]
+    public class adminVenta : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.adminRegistroCompra);
+            SetContentView(Resource.Layout.adminRegistroVenta);
 
             // Create your application here
         }

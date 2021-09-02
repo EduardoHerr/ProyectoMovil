@@ -20,10 +20,11 @@ namespace ProyectoMovil
 			SetContentView(Resource.Layout.adminInicio);
 			// Create your application here
 			var btnUsuario = FindViewById<Button>(Resource.Id.btnInicioUsuario);
-			var btnCategoria = FindViewById<Button>(Resource.Id.btnCategoria);
+			var btnProveedor = FindViewById<Button>(Resource.Id.btnCategoria);
 			var btnProducto = FindViewById<Button>(Resource.Id.btnProductos);
 			var btnCliente = FindViewById<Button>(Resource.Id.btnInicioCliente);
-			var btnProveedor = FindViewById<Button>(Resource.Id.btnpro );
+			var btnVenta = FindViewById<Button>(Resource.Id.btnpro );
+			var btnCompra = FindViewById<Button>(Resource.Id.btncompra);
 			btnCliente.Click += delegate
 			{
 				Intent intent = new Intent(this, typeof(adminCliente));
@@ -35,9 +36,9 @@ namespace ProyectoMovil
 				Intent intent = new Intent(this, typeof(adminUser));
 				StartActivity(intent);
 			};
-			btnCategoria.Click += delegate
+			btnProveedor.Click += delegate
 			{
-				Intent intent = new Intent(this, typeof(adminCategoria));
+				Intent intent = new Intent(this, typeof(adminProveedor));
 				StartActivity(intent);
 			};
 			btnProducto.Click += delegate
@@ -46,9 +47,15 @@ namespace ProyectoMovil
 				StartActivity(intent);
 			};
 
-			btnProveedor.Click += delegate
+			btnVenta.Click += delegate
 			{
-				Intent intent = new Intent(this, typeof(adminProveedor));
+				Intent intent = new Intent(this, typeof(adminVenta));
+				StartActivity(intent);
+			};
+
+			btnCompra.Click += delegate
+			{
+				Intent intent = new Intent(this, typeof(adminCompra));
 				StartActivity(intent);
 			};
 		}

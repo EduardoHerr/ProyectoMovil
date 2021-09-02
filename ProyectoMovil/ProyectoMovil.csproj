@@ -74,11 +74,11 @@
   <ItemGroup>
     <Compile Include="adminCliente.cs" />
     <Compile Include="adminInicio.cs" />
-    <Compile Include="adminCategoria.cs" />
     <Compile Include="adminProducto.cs" />
     <Compile Include="adminProveedor.cs" />
     <Compile Include="adminUser.cs" />
     <Compile Include="adminCompra.cs" />
+    <Compile Include="adminVenta.cs" />
     <Compile Include="connectDB.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
@@ -164,13 +164,19 @@
     <AndroidResource Include="Resources\layout\adminCliente.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\adminRegistroCategoria.xml" />
+    <AndroidResource Include="Resources\layout\adminRegistroVenta.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\adminRegistroProducto.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\adminRegistroProveedor.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\adminRegistroCompra.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <WebReferenceUrl Include="http://www.proyectomovil22.somee.com/WebService1.asmx">
