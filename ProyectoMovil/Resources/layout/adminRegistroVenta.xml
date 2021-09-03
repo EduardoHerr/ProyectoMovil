@@ -37,14 +37,7 @@
                 android:id="@+id/btnbuscarVenta"
                 android:layout_marginLeft="0.0dp" />
         </LinearLayout>
-        <LinearLayout
-            android:orientation="horizontal"
-            android:minWidth="25px"
-            android:minHeight="25px"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:id="@+id/linearLayout19">
-        </LinearLayout>
+
 
         <LinearLayout
             android:orientation="horizontal"
@@ -151,11 +144,12 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/textView2" />
             <EditText
-                 android:inputType="date"
-                 android:layout_width="match_parent"
-                 android:layout_height="match_parent"
-                 android:id="@+id/txtfechaVenta" />
+                android:inputType="date"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/txtfechaVenta" />
         </LinearLayout>
+
         <LinearLayout
             android:orientation="horizontal"
             android:minWidth="25px"
@@ -170,19 +164,15 @@
                 android:layout_width="110.0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/btnRegistrarVenta"
-                android:layout_marginLeft="10dp" />
-            <Button
-                android:text="CALCULAR"
-                android:layout_width="110.0dp"
-                android:layout_height="match_parent"
-                android:id="@+id/btnCalcularVenta"
-                android:layout_marginLeft="10dp" />
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="72.0dp" />
             <Button
                 android:text="ELIMINAR"
                 android:layout_width="110dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/btnEliminarVenta"
-                android:layout_marginLeft="10dp" />
+                android:layout_marginLeft="0.0dp"
+                android:layout_marginRight="25.0dp" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

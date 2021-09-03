@@ -278,7 +278,7 @@ namespace ProyectoMovil.com.somee.proyectomovil22 {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/registrarProducto", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void registrarProducto(string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, string cantidad) {
+        public void registrarProducto(string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, double cantidad) {
             this.Invoke("registrarProducto", new object[] {
                         codigo,
                         nombre,
@@ -289,12 +289,12 @@ namespace ProyectoMovil.com.somee.proyectomovil22 {
         }
         
         /// <remarks/>
-        public void registrarProductoAsync(string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, string cantidad) {
+        public void registrarProductoAsync(string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, double cantidad) {
             this.registrarProductoAsync(codigo, nombre, descripcion, fechaelab, fechaexp, cantidad, null);
         }
         
         /// <remarks/>
-        public void registrarProductoAsync(string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, string cantidad, object userState) {
+        public void registrarProductoAsync(string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, double cantidad, object userState) {
             if ((this.registrarProductoOperationCompleted == null)) {
                 this.registrarProductoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnregistrarProductoOperationCompleted);
             }
@@ -316,7 +316,7 @@ namespace ProyectoMovil.com.somee.proyectomovil22 {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/modificarProducto", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void modificarProducto(string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, string cantidad, int id) {
+        public void modificarProducto(string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, double cantidad, int id) {
             this.Invoke("modificarProducto", new object[] {
                         codigo,
                         nombre,
@@ -328,12 +328,12 @@ namespace ProyectoMovil.com.somee.proyectomovil22 {
         }
         
         /// <remarks/>
-        public void modificarProductoAsync(string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, string cantidad, int id) {
+        public void modificarProductoAsync(string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, double cantidad, int id) {
             this.modificarProductoAsync(codigo, nombre, descripcion, fechaelab, fechaexp, cantidad, id, null);
         }
         
         /// <remarks/>
-        public void modificarProductoAsync(string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, string cantidad, int id, object userState) {
+        public void modificarProductoAsync(string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, double cantidad, int id, object userState) {
             if ((this.modificarProductoOperationCompleted == null)) {
                 this.modificarProductoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnmodificarProductoOperationCompleted);
             }
@@ -758,19 +758,19 @@ namespace ProyectoMovil.com.somee.proyectomovil22 {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/AumentarProducto", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void AumentarProducto(int cant, int id) {
+        public void AumentarProducto(double cant, int id) {
             this.Invoke("AumentarProducto", new object[] {
                         cant,
                         id});
         }
         
         /// <remarks/>
-        public void AumentarProductoAsync(int cant, int id) {
+        public void AumentarProductoAsync(double cant, int id) {
             this.AumentarProductoAsync(cant, id, null);
         }
         
         /// <remarks/>
-        public void AumentarProductoAsync(int cant, int id, object userState) {
+        public void AumentarProductoAsync(double cant, int id, object userState) {
             if ((this.AumentarProductoOperationCompleted == null)) {
                 this.AumentarProductoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAumentarProductoOperationCompleted);
             }
@@ -788,19 +788,19 @@ namespace ProyectoMovil.com.somee.proyectomovil22 {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/RestarProducto", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void RestarProducto(int cant, int id) {
+        public void RestarProducto(double cant, int id) {
             this.Invoke("RestarProducto", new object[] {
                         cant,
                         id});
         }
         
         /// <remarks/>
-        public void RestarProductoAsync(int cant, int id) {
+        public void RestarProductoAsync(double cant, int id) {
             this.RestarProductoAsync(cant, id, null);
         }
         
         /// <remarks/>
-        public void RestarProductoAsync(int cant, int id, object userState) {
+        public void RestarProductoAsync(double cant, int id, object userState) {
             if ((this.RestarProductoOperationCompleted == null)) {
                 this.RestarProductoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnRestarProductoOperationCompleted);
             }

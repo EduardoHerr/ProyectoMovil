@@ -25,7 +25,7 @@ namespace ProyectoMovil
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.adminRegistroCompra);
             var btnRegistarcompra = FindViewById<Button>(Resource.Id.btnRegistrarCompra);
-            var btnCalcularcompra = FindViewById<Button>(Resource.Id.btnCalcularCompra);
+            //var btnCalcularcompra = FindViewById<Button>(Resource.Id.btnCalcularCompra);
             var btnEliminarcompra = FindViewById<Button>(Resource.Id.btnEliminarCompra);
             var btnBuscarcopra = FindViewById<Button>(Resource.Id.btnbuscarCompra);
             var txtbusqueda = FindViewById<EditText>(Resource.Id.txtBuscarCompra);
@@ -75,9 +75,7 @@ namespace ProyectoMovil
 
             };
 
-            btnCalcularcompra.Click += delegate
-            {
-            };
+   
 
             btnRegistarcompra.Click += delegate
             {
@@ -85,7 +83,7 @@ namespace ProyectoMovil
                 txtidprovcompra.Text, txtidproductocompra.Text, txtcodigocompra.Text, Convert.ToInt32(txtcantidadcompra.Text), Convert.ToDouble(txtcostocompra.Text), txtfechacompra.Text);
 
 
-                web.AumentarProducto(Convert.ToInt32(txtcantidadcompra.Text), Convert.ToInt32(txtidproductocompra.Text));
+                web.AumentarProducto(Convert.ToDouble(txtcantidadcompra.Text), Convert.ToInt32(txtidproductocompra.Text));
 
                 Toast.MakeText(this, "Registro Creado", ToastLength.Short).Show();
                 limpiar();

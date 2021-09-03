@@ -25,7 +25,7 @@ namespace ProyectoMovil
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.adminRegistroVenta);
             var btnRegistarventa = FindViewById<Button>(Resource.Id.btnRegistrarVenta);
-            var btnCalcularventa = FindViewById<Button>(Resource.Id.btnCalcularVenta);
+            //var btnCalcularventa = FindViewById<Button>(Resource.Id.btnCalcularVenta);
             var btnEliminarventa = FindViewById<Button>(Resource.Id.btnEliminarVenta);
             var btnBuscarventa = FindViewById<Button>(Resource.Id.btnbuscarVenta);
             var txtbusqueda = FindViewById<EditText>(Resource.Id.txtBuscarVenta);
@@ -35,6 +35,7 @@ namespace ProyectoMovil
             var txtcodigoventa = FindViewById<EditText>(Resource.Id.txtcodigoVenta);
             var txtcantidadventa = FindViewById<EditText>(Resource.Id.txtcantidadVenta);
             var txtcostoventa = FindViewById<EditText>(Resource.Id.txttotalVenta);
+           // var txtcostventa = FindViewById<EditText>(Resource.Id.txtcostoventa);
             var txtfechaventa = FindViewById<EditText>(Resource.Id.txtfechaVenta);
 
             // Create your application here
@@ -75,10 +76,8 @@ namespace ProyectoMovil
                 }
 
             };
-
-            btnCalcularventa.Click += delegate 
-            { 
-            };
+            
+           
 
             btnRegistarventa.Click += delegate
             {
@@ -87,7 +86,7 @@ namespace ProyectoMovil
                 
                 Toast.MakeText(this, "Registro Creado", ToastLength.Short).Show();
 
-               web.RestarProducto(Convert.ToInt32(txtcantidadventa.Text), Convert.ToInt32(txtidproductoventa.Text));
+               web.RestarProducto(Convert.ToDouble(txtcantidadventa.Text), Convert.ToInt32(txtidproductoventa.Text));
                 limpiar();
             };
 

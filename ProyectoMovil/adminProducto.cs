@@ -45,7 +45,7 @@ namespace ProyectoMovil
             {
                 
                 web.modificarProducto(txtcodigopro.Text, 
-                    txtnombrepro.Text, txtdescpro.Text,txtfechaeliapro.Text, txtfechaexpro.Text,txtcantidadpro.Text ,id);
+                    txtnombrepro.Text, txtdescpro.Text,txtfechaeliapro.Text, txtfechaexpro.Text,Convert.ToDouble(txtcantidadpro.Text) ,id);
                 limpiar();
                 Toast.MakeText(this, "Registro Actualizado", ToastLength.Short).Show();
             };
@@ -68,7 +68,7 @@ namespace ProyectoMovil
             btnRegistarpro.Click += delegate
             {
                 web.registrarProducto(
-                    txtcodigopro.Text,txtnombrepro.Text, txtdescpro.Text,txtfechaeliapro.Text,txtfechaexpro.Text,txtcantidadpro.Text);
+                    txtcodigopro.Text,txtnombrepro.Text, txtdescpro.Text,txtfechaeliapro.Text,txtfechaexpro.Text,Convert.ToDouble(txtcantidadpro.Text));
                 limpiar();
                 Toast.MakeText(this, "Registro Creado", ToastLength.Short).Show();
             };

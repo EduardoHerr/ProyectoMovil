@@ -170,19 +170,15 @@
                 android:layout_width="110.0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/btnRegistrarCompra"
-                android:layout_marginLeft="10dp" />
-            <Button
-                android:text="CALCULAR"
-                android:layout_width="110.0dp"
-                android:layout_height="match_parent"
-                android:id="@+id/btnCalcularCompra"
-                android:layout_marginLeft="10dp" />
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="78.0dp" />
             <Button
                 android:text="ELIMINAR"
                 android:layout_width="110dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/btnEliminarCompra"
-                android:layout_marginLeft="10dp" />
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="45.5dp" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
