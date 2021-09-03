@@ -36,7 +36,7 @@
             <s:element minOccurs="0" maxOccurs="1" name="descripcion" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="fechaelab" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="fechaexp" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="cantidad" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="cantidad" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -51,7 +51,7 @@
             <s:element minOccurs="0" maxOccurs="1" name="descripcion" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="fechaelab" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="fechaexp" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="cantidad" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="cantidad" type="s:int" />
             <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
           </s:sequence>
         </s:complexType>

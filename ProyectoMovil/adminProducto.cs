@@ -68,7 +68,7 @@ namespace ProyectoMovil
             btnRegistarpro.Click += delegate
             {
                 web.registrarProducto(
-                    txtcodigopro.Text,txtnombrepro.Text, txtdescpro.Text,txtfechaeliapro.Text,txtfechaexpro.Text,Convert.ToDouble(txtcantidadpro.Text));
+                    txtcodigopro.Text,txtnombrepro.Text, txtdescpro.Text,txtfechaeliapro.Text,txtfechaexpro.Text,Convert.ToInt32(txtcantidadpro.Text));
                 limpiar();
                 Toast.MakeText(this, "Registro Creado", ToastLength.Short).Show();
             };

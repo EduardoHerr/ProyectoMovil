@@ -278,7 +278,7 @@ namespace ProyectoMovil.com.somee.proyectomovil22 {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/registrarProducto", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void registrarProducto(string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, double cantidad) {
+        public void registrarProducto(string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, int cantidad) {
             this.Invoke("registrarProducto", new object[] {
                         codigo,
                         nombre,
@@ -289,12 +289,12 @@ namespace ProyectoMovil.com.somee.proyectomovil22 {
         }
         
         /// <remarks/>
-        public void registrarProductoAsync(string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, double cantidad) {
+        public void registrarProductoAsync(string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, int cantidad) {
             this.registrarProductoAsync(codigo, nombre, descripcion, fechaelab, fechaexp, cantidad, null);
         }
         
         /// <remarks/>
-        public void registrarProductoAsync(string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, double cantidad, object userState) {
+        public void registrarProductoAsync(string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, int cantidad, object userState) {
             if ((this.registrarProductoOperationCompleted == null)) {
                 this.registrarProductoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnregistrarProductoOperationCompleted);
             }
@@ -316,7 +316,7 @@ namespace ProyectoMovil.com.somee.proyectomovil22 {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/modificarProducto", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void modificarProducto(string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, double cantidad, int id) {
+        public void modificarProducto(string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, int cantidad, int id) {
             this.Invoke("modificarProducto", new object[] {
                         codigo,
                         nombre,
@@ -328,12 +328,12 @@ namespace ProyectoMovil.com.somee.proyectomovil22 {
         }
         
         /// <remarks/>
-        public void modificarProductoAsync(string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, double cantidad, int id) {
+        public void modificarProductoAsync(string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, int cantidad, int id) {
             this.modificarProductoAsync(codigo, nombre, descripcion, fechaelab, fechaexp, cantidad, id, null);
         }
         
         /// <remarks/>
-        public void modificarProductoAsync(string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, double cantidad, int id, object userState) {
+        public void modificarProductoAsync(string codigo, string nombre, string descripcion, string fechaelab, string fechaexp, int cantidad, int id, object userState) {
             if ((this.modificarProductoOperationCompleted == null)) {
                 this.modificarProductoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnmodificarProductoOperationCompleted);
             }
